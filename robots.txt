@@ -1,4 +1,67 @@
+# ============================================================
+#  Sunne Sul — sunnesul.com.br
+#  Buscadores e assistentes de IA: acesso liberado.
+# ============================================================
+
 User-agent: *
 Allow: /
 
+# ---------- Buscadores tradicionais ----------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ---------- OpenAI / ChatGPT ----------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ---------- Anthropic / Claude ----------
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ---------- Perplexity ----------
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ---------- Google (IA / Gemini) ----------
+User-agent: Google-Extended
+Allow: /
+
+# ---------- Outros ----------
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# ---------- Índices ----------
 Sitemap: https://sunnesul.com.br/sitemap.xml
