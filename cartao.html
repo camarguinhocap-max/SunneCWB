@@ -3,9 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Cartão de visitas — Assessor de Energia Sunne | Curitiba</title>
-<meta name="description" content="Cartão de visitas digital — Assessoria de energia Sunne em Curitiba e região. Salve o contato e fale no WhatsApp.">
+<title>Josmair Camargo — Assessor de Energia Sunne | Paraná e Região Sul</title>
+<meta name="description" content="Cartão de contato de Josmair Camargo, Assessor de Energia Sunne no Paraná e região Sul. Salve o contato e fale no WhatsApp para simular sua economia.">
+<meta name="keywords" content="assessor de energia parana, josmair camargo, sunne sul">
+<meta name="author" content="Sunne Sul — Assessoria de Energia">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://sunnesul.com.br/cartao.html">
+
+<!-- Busca local -->
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<meta name="coverage" content="Paraná, Santa Catarina, São Paulo, Mato Grosso do Sul">
+<meta name="geo.position" content="-25.4284;-49.2733">
+<meta name="ICBM" content="-25.4284, -49.2733">
+
+<!-- Compartilhamento (WhatsApp, Facebook, Instagram, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunne Sul">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://sunnesul.com.br/cartao.html">
+<meta property="og:title" content="Josmair Camargo — Assessor de Energia Sunne | Paraná e Região Sul">
+<meta property="og:description" content="Cartão de contato de Josmair Camargo, Assessor de Energia Sunne no Paraná e região Sul. Salve o contato e fale no WhatsApp para simular sua economia.">
+<meta property="og:image" content="https://sunnesul.com.br/hero-poster.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="Fazenda solar ao amanhecer — energia limpa Sunne">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Josmair Camargo — Assessor de Energia Sunne | Paraná e Região Sul">
+<meta name="twitter:description" content="Cartão de contato de Josmair Camargo, Assessor de Energia Sunne no Paraná e região Sul. Salve o contato e fale no WhatsApp para simular sua economia.">
+<meta name="twitter:image" content="https://sunnesul.com.br/hero-poster.jpg">
+
+<meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="Sunne-nova-logo-19.webp">
+<link rel="apple-touch-icon" href="Sunne-nova-logo-19.webp">
+
 
 <!--
   ================================================================
@@ -59,7 +90,7 @@
     box-shadow:0 0 0 6px rgba(35,164,85,0.10), 0 14px 34px rgba(0,0,0,.5);
     font-family:var(--font-display); font-size:2.3rem; color:#fff; letter-spacing:.02em;
   }
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;transform-origin:center}
 
   .name{margin-top:18px;font-family:var(--font-display);font-weight:400;font-size:1.85rem;line-height:1.15;letter-spacing:-.01em}
   .role{margin-top:7px;color:var(--brand);font-weight:600;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase}
@@ -108,6 +139,30 @@
   @media (max-width:380px){ .split{grid-template-columns:1fr} }
   @media (prefers-reduced-motion:reduce){ .btn:hover{transform:none} }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Josmair Franco de Camargo Filho",
+  "jobTitle": "Assessor de Energia Sunne",
+  "url": "https://sunnesul.com.br/cartao.html",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Sunne Sul — Assessoria de Energia",
+    "url": "https://sunnesul.com.br"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Paraná"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  }
+}
+</script>
 </head>
 <body>
   <div id="spot"></div>
@@ -173,7 +228,7 @@ const DADOS = {
   nome:      "Josmair Franco de Camargo Filho",
   apelido:   "Josmair",              // usado no vCard e na saudacao
   cargo:     "Assessor de Energia Sunne",
-  local:     "Curitiba · Paraná",
+  local:     "Paraná · Região Sul",
   bio:       "Analiso sua conta de luz e mostro quanto dá pra economizar com energia limpa — sem obras, sem investimento e sem compromisso.",
   whatsapp:  "5541998308282",             // 55 + DDD + numero (so digitos)
   telefone:  "5541998308282",             // usado no botao "Ligar"
@@ -182,6 +237,8 @@ const DADOS = {
   empresa:   "Sunne — Assessoria de Energia",
   msgWpp:    "Olá! Vi seu cartão e quero saber mais sobre a Sunne.",
   foto:      "foto.jpg",                 // salve sua foto com este nome (opcional)
+  fotoFoco:  "50% 30%",                 // enquadramento X Y — menor Y sobe (bom p/ rosto)
+  fotoZoom:  1,                          // 1 = normal | 1.15 aproxima | 0.9 afasta
 };
 
 /* ==========================================================================
@@ -212,7 +269,11 @@ const DADOS = {
     let i = 0;
     const img = new Image();
     img.alt = DADOS.nome;
-    img.onload = () => { av.textContent = ''; av.appendChild(img); };
+    img.onload = () => {
+      img.style.objectPosition = DADOS.fotoFoco || '50% 50%';
+      img.style.transform = 'scale(' + (DADOS.fotoZoom || 1) + ')';
+      av.textContent = ''; av.appendChild(img);
+    };
     img.onerror = () => { if (++i < tentativas.length) img.src = tentativas[i]; };
     img.src = tentativas[0];  // se nenhuma existir, ficam as iniciais
   }
@@ -223,7 +284,7 @@ const DADOS = {
   $('a-tel').href = "tel:+" + soDigitos(DADOS.telefone);
 
   // rodape
-  $('f-foot').innerHTML = DADOS.empresa + "<br>Atendimento em Curitiba e região";
+  $('f-foot').innerHTML = DADOS.empresa + "<br>Atendemos Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul";
 
   // toast
   let toastTimer;
