@@ -343,6 +343,88 @@
     </div>
   </section>
 
+
+  <!-- ============ SIMULADOR DE ECONOMIA ============ -->
+  <style>
+    .sim__box{margin-top:40px;max-width:560px;padding:28px;border-radius:20px;
+      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09)}
+    .sim__label{display:block;font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+    .sim__field{margin-top:12px;display:flex;align-items:center;gap:10px;padding:0 16px;height:64px;
+      border-radius:14px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
+    .sim__field:focus-within{border-color:var(--brand)}
+    .sim__field span{color:var(--muted);font-size:1.3rem}
+    .sim__field input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);
+      font-family:var(--font-ui);font-size:1.7rem;font-weight:600}
+    .sim__range{margin-top:20px;width:100%;accent-color:var(--brand)}
+    .sim__hint{margin-top:8px;color:var(--muted);font-size:.86rem}
+    .sim__out{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);
+      display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .sim__cell b{display:block;font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,4.6vw,2.3rem);
+      line-height:1.1;color:var(--brand)}
+    .sim__cell small{display:block;margin-top:5px;color:var(--muted);font-size:.85rem}
+    .sim__cell--year b{color:var(--gold,#F5B23E)}
+    .sim__note{margin-top:18px;font-size:.79rem;color:rgba(154,148,139,.8);line-height:1.5}
+    @media (max-width:520px){.sim__out{grid-template-columns:1fr}}
+  </style>
+  <section class="section" id="simulador">
+    <div class="wrap">
+      <div class="eyebrow">Simulador</div>
+      <h2 class="title">Quanto você pode economizar?</h2>
+      <p class="lead">
+        Coloque o valor médio da sua conta de luz e veja uma <b>estimativa</b> do quanto
+        a energia por assinatura pode reduzir por mês e por ano.
+      </p>
+
+      <div class="sim__box">
+        <label class="sim__label" for="sim-valor">Sua conta de luz por mês</label>
+        <div class="sim__field">
+          <span>R$</span>
+          <input id="sim-valor" type="number" inputmode="decimal" min="0" step="10" value="450" aria-describedby="sim-nota">
+        </div>
+
+        <input class="sim__range" id="sim-desc" type="range" min="10" max="20" step="1" value="15"
+               aria-label="Percentual de desconto estimado">
+        <div class="sim__hint">Desconto considerado: <b id="sim-pct">15%</b> (a faixa usual vai de 10% a 20%)</div>
+
+        <div class="sim__out">
+          <div class="sim__cell">
+            <b id="sim-mes">R$ 67,50</b>
+            <small>de economia por mês</small>
+          </div>
+          <div class="sim__cell sim__cell--year">
+            <b id="sim-ano">R$ 810,00</b>
+            <small>de economia por ano</small>
+          </div>
+        </div>
+
+        <p class="sim__note" id="sim-nota">
+          Simulação apenas informativa. O desconto real depende da análise do seu perfil de
+          consumo, da disponibilidade de usina na sua região e das condições em contrato.
+        </p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn js-wa" href="#">Quero minha simulação real</a>
+      </div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var v=document.getElementById('sim-valor'), d=document.getElementById('sim-desc'),
+        p=document.getElementById('sim-pct'), m=document.getElementById('sim-mes'), a=document.getElementById('sim-ano');
+    var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+    function calc(){
+      var valor=parseFloat(v.value)||0, pct=parseInt(d.value,10);
+      if(valor<0) valor=0;
+      var mes=valor*pct/100;
+      p.textContent=pct+'%';
+      m.textContent=brl.format(mes);
+      a.textContent=brl.format(mes*12);
+    }
+    v.addEventListener('input',calc); d.addEventListener('input',calc); calc();
+  })();
+  </script>
+
   <!-- FAQ -->
   <section class="section" id="faq">
     <div class="wrap">
@@ -394,6 +476,7 @@
         <a href="index.html">Início</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="assessor.html">Ser assessor</a>
+        <a href="blog.html">Artigos</a>
         <a href="cartao.html">Cartão · Josmair</a>
         <a href="cartao-junior.html">Cartão · Junior</a>
         <a class="js-wa" href="#">WhatsApp</a>
@@ -404,7 +487,7 @@
 
 <script>
   // >>> COLOQUE SEU NUMERO DE WHATSAPP AQUI (55 + DDD + numero, so digitos) <<<
-  const WHATSAPP = "554184738591";
+  const WHATSAPP = "5541984738591";
   const MSG = "Olá! Quero reduzir minha conta de energia com a Sunne.";
   const link = "https://wa.me/" + WHATSAPP.replace(/\D/g, "") + "?text=" + encodeURIComponent(MSG);
   document.querySelectorAll('.js-wa').forEach(a => { a.href = link; a.target = "_blank"; a.rel = "noopener"; });
@@ -526,5 +609,37 @@
   build(); requestAnimationFrame(draw);
 })();
 </script>
+
+  <!-- ===== Botao flutuante de WhatsApp ===== -->
+  <style>
+    .wa-float{position:fixed;z-index:40;right:calc(18px + env(safe-area-inset-right,0px));
+      bottom:calc(18px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;
+      height:56px;padding:0 22px 0 18px;border-radius:999px;background:#23A455;color:#04120A;
+      font-family:"Hanken Grotesk",system-ui,sans-serif;font-weight:600;font-size:.98rem;text-decoration:none;
+      box-shadow:0 12px 34px rgba(35,164,85,.34);transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s;
+      opacity:0;transform:translateY(14px);pointer-events:none}
+    .wa-float.on{opacity:1;transform:translateY(0);pointer-events:auto}
+    .wa-float:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(35,164,85,.42)}
+    .wa-float:focus-visible{outline:2px solid #F5B23E;outline-offset:3px}
+    .wa-float svg{width:24px;height:24px;flex:none}
+    @media (max-width:600px){.wa-float{height:54px;width:54px;padding:0;justify-content:center}
+      .wa-float span{display:none}}
+    @media (prefers-reduced-motion:reduce){.wa-float{transition:none}}
+  </style>
+  <a class="wa-float" id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6 8.9a5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c2.1.9 2.1.6 2.5.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+  <script>
+  (function(){
+    var NUM = "5541984738591";   // <-- numero unico do botao flutuante
+    var MSG = "Olá! Vim pelo site e quero saber mais sobre a Sunne.";
+    var el = document.getElementById('wa-float');
+    el.href = "https://wa.me/" + NUM.replace(/\D/g,'') + "?text=" + encodeURIComponent(MSG);
+    // aparece depois que o visitante rola um pouco (nao atrapalha o hero)
+    function ver(){ el.classList.toggle('on', scrollY > innerHeight * 0.6); }
+    addEventListener('scroll', ver, {passive:true}); ver();
+  })();
+  </script>
 </body>
 </html>
