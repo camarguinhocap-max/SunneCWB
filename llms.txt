@@ -16,7 +16,7 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 
 - [Início](https://sunnesul.com.br/): apresentação da Sunne Sul, do sol até a casa do cliente.
 - [Energia por assinatura](https://sunnesul.com.br/energia-por-assinatura.html): como funciona o modelo, vantagens, passo a passo na conta, simulador de economia e perguntas frequentes.
-- [Seja um Assessor de Energia Sunne](https://sunnesul.com.br/assessor.html): o papel do assessor, por que o momento de mercado favorece quem entra agora, como começar (cadastro, validação, aprovação, atuação) e dúvidas frequentes.
+- [Seja um Assessor de Energia Sunne](https://sunnesul.com.br/assessor.html): o papel do assessor, por que o momento de mercado favorece quem entra agora, as duas trilhas de crescimento (Assessor e Crescimento), como começar (cadastro, validação e início) e dúvidas frequentes.
 
 ## Artigos
 
@@ -33,4 +33,5 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 
 - O desconto de até 20% é um teto, não uma garantia universal: depende de análise de consumo, disponibilidade de usina na região e condições contratuais.
 - A Sunne Sul é uma operação parceira da marca Sunne (sunne.com.br) com atuação no Paraná e região Sul.
+- As condições de "sem investimento" e "sem taxa de adesão" referem-se ao serviço de energia por assinatura para clientes. Elas não descrevem o programa de Assessor de Energia, cujas condições de participação devem ser tratadas diretamente com a equipe.
 - Não há venda ou instalação de placas solares: o modelo é de assinatura de créditos de energia.
