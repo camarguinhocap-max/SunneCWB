@@ -18,6 +18,7 @@
 ==================================================================================
 -->
 
+<link rel="icon" href="Sunne-nova-logo-19.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -277,7 +278,6 @@
       <video class="hero__video" id="hero-video"
              muted playsinline preload="auto"
              poster="hero-poster.jpg" disablepictureinpicture>
-        <source src="hero.webm" type="video/webm">
         <source src="hero.mp4"  type="video/mp4">
       </video>
 
@@ -403,7 +403,6 @@
   <!-- ===================== MUSICA DE FUNDO ===================== -->
   <!-- Troque o nome se seu arquivo for diferente. Roda solto, em loop. -->
   <audio id="ambient" loop preload="auto">
-    <source src="ambient.ogg" type="audio/ogg">
     <source src="ambient.mp3" type="audio/mpeg">
   </audio>
 
@@ -474,14 +473,19 @@ const SCENES = [
   let started = false;
   let userMuted = false; // usuario desligou de proposito?
 
+  let fadeToken = 0;
+  const clamp01 = (v) => Math.min(1, Math.max(0, v));
   function fadeTo(target, ms) {
-    const from = audio.volume;
+    const myToken = ++fadeToken;          // cancela qualquer fade anterior
+    const from = clamp01(audio.volume);
+    const to = clamp01(target);
     const t0 = performance.now();
     function step(now) {
+      if (myToken !== fadeToken) return;  // um fade mais novo assumiu
       const k = Math.min((now - t0) / ms, 1);
-      audio.volume = from + (target - from) * k;
+      audio.volume = clamp01(from + (to - from) * k);  // nunca sai de [0,1]
       if (k < 1) requestAnimationFrame(step);
-      else if (target === 0) audio.pause();
+      else if (to === 0) audio.pause();
     }
     requestAnimationFrame(step);
   }
@@ -673,11 +677,12 @@ const SCENES = [
 
   const css = document.createElement('style');
   css.textContent =
-    '#energy-spot,#energy-canvas{position:fixed;inset:0;pointer-events:none}' +
-    '#energy-spot{z-index:-1;mix-blend-mode:screen;background:' +
+    '#energy-spot,#energy-canvas{position:fixed;inset:0;pointer-events:none;z-index:0}' +
+    'body>*:not(#energy-spot):not(#energy-canvas){position:relative;z-index:1}' +
+    '#energy-spot{mix-blend-mode:screen;background:' +
       'radial-gradient(circle '+CFG.spotSize+'px at var(--mx,50%) var(--my,50%),rgba(47,209,115,'+CFG.spotAlpha+') 0%,rgba(47,209,115,'+(CFG.spotAlpha*0.28)+') 38%,transparent 70%),' +
       'radial-gradient(circle '+(CFG.spotSize*1.5)+'px at var(--mx,50%) var(--my,50%),rgba(245,178,62,'+(CFG.spotAlpha*0.30)+') 0%,transparent 60%)}' +
-    '#energy-canvas{z-index:-1}' +
+    
     '.section,.band,.section--assessor,.after{background-color:transparent !important;background-image:none !important}';
   document.head.appendChild(css);
 
