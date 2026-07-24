@@ -313,6 +313,71 @@
 
   /* H1 semantico: invisivel no layout, lido por buscadores e leitores de tela */
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* ===== Carrossel (depoimentos + mídia) ===== */
+  .car{position:relative;margin-top:44px}
+  .car__track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;padding-bottom:6px;-ms-overflow-style:none;scrollbar-width:none}
+  .car__track::-webkit-scrollbar{display:none}
+  .car__item{flex:0 0 min(420px,86%);scroll-snap-align:center;padding:30px;border-radius:20px;
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09)}
+  .car__quote{font-family:var(--font-display);font-weight:400;font-size:clamp(1.05rem,2.1vw,1.28rem);
+    line-height:1.5;color:var(--text)}
+  .car__who{margin-top:20px;display:flex;align-items:center;gap:13px}
+  .car__av{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--brand),#18703a);color:#fff;font-family:var(--font-display);font-size:1.05rem}
+  .car__av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .car__nome{font-weight:600;font-size:.98rem}
+  .car__cargo{color:var(--muted);font-size:.86rem;margin-top:2px}
+  .car__stars{color:var(--accent);font-size:.95rem;letter-spacing:.12em;margin-bottom:14px}
+  .car__nav{margin-top:22px;display:flex;align-items:center;gap:14px}
+  .car__btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);color:var(--text);
+    transition:all .18s var(--ease)}
+  .car__btn:hover{border-color:var(--brand);color:var(--brand)}
+  .car__btn svg{width:18px;height:18px}
+  .car__dots{display:flex;gap:7px;margin-left:auto}
+  .car__dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);border:0;padding:0;cursor:pointer;transition:all .2s var(--ease)}
+  .car__dot.on{background:var(--brand);width:22px;border-radius:4px}
+
+  /* faixa de imprensa */
+  .press{margin-top:40px;display:grid;gap:14px}
+  .press a{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:18px 20px;border-radius:14px;
+    text-decoration:none;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);
+    transition:border-color .2s var(--ease),background .2s var(--ease)}
+  .press a:hover{border-color:var(--brand);background:rgba(35,164,85,.05)}
+  .press b{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);flex:none}
+  .press span{color:var(--muted);font-size:.98rem;line-height:1.5}
+
+  /* ===== Velocímetro de energia (canto inferior direito) ===== */
+  .gauge{position:fixed !important;z-index:55;left:calc(20px + env(safe-area-inset-left,0px));
+    bottom:calc(20px + env(safe-area-inset-bottom,0px));width:150px;pointer-events:none;
+    opacity:0;transform:translateY(14px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+  .gauge.on{opacity:1;transform:translateY(0)}
+  .gauge svg{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 20px rgba(0,0,0,.5))}
+  .gauge__val{font-family:var(--font-display);font-weight:400;fill:var(--text)}
+  .gauge__unit{font-family:var(--font-ui);font-weight:600;fill:var(--muted);letter-spacing:.12em}
+  .gauge__label{font-family:var(--font-ui);fill:var(--muted);letter-spacing:.16em}
+  @media (max-width:600px){.gauge{width:118px;left:14px;bottom:14px}}
+  @media (prefers-reduced-motion:reduce){.gauge{transition:none}}
+
+  /* ===== Seção de contato ===== */
+  .form{margin-top:44px;max-width:620px;display:grid;gap:16px}
+  .form__grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .flabel{display:block;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:9px}
+  .finput,.fselect,.ftext{width:100%;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.13);
+    border-radius:13px;padding:15px 16px;color:var(--text);font-family:var(--font-ui);font-size:1rem;outline:0;transition:border-color .18s var(--ease)}
+  .ftext{min-height:130px;resize:vertical;line-height:1.55}
+  .finput:focus,.fselect:focus,.ftext:focus{border-color:var(--brand)}
+  .fselect{appearance:none;-webkit-appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239A948B' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+  .fselect option{background:#111013;color:var(--text)}
+  .form .btn{justify-self:start;margin-top:6px;border:0;cursor:pointer;height:54px;padding:0 34px;font-size:1rem}
+  .form__ok{display:none;padding:26px;border-radius:16px;background:rgba(35,164,85,.08);border:1px solid rgba(35,164,85,.3);color:var(--text);line-height:1.6}
+  .form__ok.show{display:block}
+  .fnote{color:rgba(154,148,139,.8);font-size:.82rem;line-height:1.5}
+  @media (max-width:560px){.form__grid{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
 {
@@ -412,6 +477,11 @@
 </head>
 
 <body>
+  <form name="contato" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nome"><input type="text" name="sobrenome">
+    <input type="tel" name="telefone"><input type="text" name="assunto">
+    <textarea name="mensagem"></textarea>
+  </form>
 
   <!-- ============================ HERO ============================ -->
   <h1 class="sr-only">Sunne Sul — energia limpa e mais barata para casas e empresas em todo o Paraná e região Sul do Brasil</h1>
@@ -540,6 +610,112 @@
       <div class="cta-row">
         <a class="btn" href="/assessor">Quero ser Assessor</a>
         <a class="btn btn--ghost" href="#reduzir">Só quero economizar</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ DEPOIMENTOS (aparece só quando houver) ============ -->
+  <section class="section" id="depoimentos" style="display:none">
+    <div class="wrap">
+      <div class="eyebrow">Quem já economiza</div>
+      <h2 class="section__title">O que dizem nossos clientes</h2>
+      <div class="car">
+        <div class="car__track" id="dep-track"></div>
+        <div class="car__nav">
+          <button class="car__btn" id="dep-prev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="car__btn" id="dep-next" aria-label="Próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="car__dots" id="dep-dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUNNE NA MÍDIA ============ -->
+  <section class="section" id="midia">
+    <div class="wrap">
+      <div class="eyebrow">Sunne na mídia</div>
+      <h2 class="section__title">A marca que representamos</h2>
+      <p class="section__lead">
+        A Sunne, marca da qual somos assessores no Paraná e região Sul, já foi destaque
+        na imprensa nacional de negócios e sustentabilidade.
+      </p>
+      <div class="press">
+        <a href="https://valor.globo.com/publicacoes/suplementos/noticia/2021/08/30/monitoramento-em-tempo-real-evita-desperdicios.ghtml" target="_blank" rel="noopener">
+          <b>Valor Econômico</b><span>Monitoramento em tempo real evita desperdícios de energia</span>
+        </a>
+        <a href="https://exame.com/esg/brasil-tem-343-startups-de-esg-mostra-relatorio-da-ace/" target="_blank" rel="noopener">
+          <b>Exame</b><span>Brasil tem 343 startups de ESG, segundo relatório da ACE</span>
+        </a>
+        <a href="https://startups.com.br/alem-da-faria-lima/alem-da-faria-lima-no-ceara-sunne-busca-seu-lugar-ao-sol-com-oferta-de-energias-renovaveis/" target="_blank" rel="noopener">
+          <b>Startups.com.br</b><span>A Sunne e sua oferta de energias renováveis</span>
+        </a>
+        <a href="https://www.suno.com.br/noticias/eneva-enev3-gvangels-aportam-startup-energia-renovavel/" target="_blank" rel="noopener">
+          <b>Suno</b><span>Eneva e GVAngels aportam R$ 1 milhão na startup de energia renovável</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CONTATO ============ -->
+  <section class="section" id="contato">
+    <div class="wrap">
+      <div class="eyebrow">Fale com a gente</div>
+      <h2 class="section__title">Entre em contato</h2>
+      <p class="section__lead">
+        Tem uma dúvida ou quer uma simulação da sua economia? Preencha abaixo — ou,
+        se preferir, chame no WhatsApp pelo botão ao lado.
+      </p>
+
+      <form class="form" name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?enviado=1">
+        <input type="hidden" name="form-name" value="contato">
+        <p style="display:none"><label>Não preencha: <input name="bot-field"></label></p>
+
+        <div class="form__grid">
+          <div>
+            <label class="flabel" for="c-nome">Nome</label>
+            <input class="finput" id="c-nome" name="nome" type="text" required autocomplete="given-name">
+          </div>
+          <div>
+            <label class="flabel" for="c-sobrenome">Sobrenome</label>
+            <input class="finput" id="c-sobrenome" name="sobrenome" type="text" required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div>
+          <label class="flabel" for="c-tel">Telefone / WhatsApp</label>
+          <input class="finput" id="c-tel" name="telefone" type="tel" required inputmode="tel" placeholder="(41) 90000-0000" autocomplete="tel">
+        </div>
+
+        <div>
+          <label class="flabel" for="c-assunto">Assunto</label>
+          <select class="fselect" id="c-assunto" name="assunto" required>
+            <option value="" selected disabled>Selecione…</option>
+            <option>Quero reduzir minha conta de luz</option>
+            <option>Quero ser Assessor de Energia</option>
+            <option>Sou empresa / condomínio</option>
+            <option>Dúvidas sobre energia por assinatura</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="flabel" for="c-msg">Descrição do assunto</label>
+          <textarea class="ftext" id="c-msg" name="mensagem" required placeholder="Conte um pouco sobre o que você precisa. Se for reduzir a conta, o valor médio da sua fatura ajuda."></textarea>
+        </div>
+
+        <button class="btn" type="submit">Enviar mensagem</button>
+        <p class="fnote">Seus dados são usados apenas para responder ao seu contato.</p>
+      </form>
+
+      <div class="form__ok" id="form-ok">
+        <b>Mensagem enviada!</b><br>
+        Recebemos o seu contato e retornaremos em breve. Se for urgente, chame no WhatsApp pelo botão verde.
       </div>
     </div>
   </section>
@@ -838,7 +1014,7 @@ const SCENES = [
   const css = document.createElement('style');
   css.textContent =
     '#energy-spot,#energy-canvas{position:fixed;inset:0;pointer-events:none;z-index:0}' +
-    'body>*:not(#energy-spot):not(#energy-canvas){position:relative;z-index:1}' +
+    'body>*:not(#energy-spot):not(#energy-canvas):not(.wa-float):not(.gauge){position:relative;z-index:1}' +
     '#energy-spot{mix-blend-mode:screen;background:' +
       'radial-gradient(circle '+CFG.spotSize+'px at var(--mx,50%) var(--my,50%),rgba(47,209,115,'+CFG.spotAlpha+') 0%,rgba(47,209,115,'+(CFG.spotAlpha*0.28)+') 38%,transparent 70%),' +
       'radial-gradient(circle '+(CFG.spotSize*1.5)+'px at var(--mx,50%) var(--my,50%),rgba(245,178,62,'+(CFG.spotAlpha*0.30)+') 0%,transparent 60%)}' +
@@ -936,18 +1112,18 @@ const SCENES = [
 
   <!-- ===== Botao flutuante de WhatsApp ===== -->
   <style>
-    .wa-float{position:fixed;z-index:40;right:calc(18px + env(safe-area-inset-right,0px));
-      bottom:calc(18px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;
-      height:56px;padding:0 22px 0 18px;border-radius:999px;background:#23A455;color:#04120A;
+    .wa-float{position:fixed !important;z-index:60;right:calc(18px + env(safe-area-inset-right,0px));
+      bottom:calc(18px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;justify-content:center;
+      width:58px;height:58px;padding:0;border-radius:50%;background:#23A455;color:#04120A;
       font-family:"Hanken Grotesk",system-ui,sans-serif;font-weight:600;font-size:.98rem;text-decoration:none;
       box-shadow:0 12px 34px rgba(35,164,85,.34);transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s;
       opacity:0;transform:translateY(14px);pointer-events:none}
     .wa-float.on{opacity:1;transform:translateY(0);pointer-events:auto}
     .wa-float:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(35,164,85,.42)}
     .wa-float:focus-visible{outline:2px solid #F5B23E;outline-offset:3px}
-    .wa-float svg{width:24px;height:24px;flex:none}
-    @media (max-width:600px){.wa-float{height:54px;width:54px;padding:0;justify-content:center}
-      .wa-float span{display:none}}
+    .wa-float svg{width:27px;height:27px;flex:none}
+    .wa-float span{display:none}
+    @media (max-width:600px){.wa-float{width:54px;height:54px}}
     @media (prefers-reduced-motion:reduce){.wa-float{transition:none}}
   </style>
   <a class="wa-float" id="wa-float" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
@@ -961,8 +1137,149 @@ const SCENES = [
     var el = document.getElementById('wa-float');
     el.href = "https://wa.me/" + NUM.replace(/\D/g,'') + "?text=" + encodeURIComponent(MSG);
     // aparece depois que o visitante rola um pouco (nao atrapalha o hero)
-    function ver(){ el.classList.toggle('on', scrollY > innerHeight * 0.6); }
+    function ver(){ el.classList.toggle('on', scrollY > innerHeight * 0.25); }
     addEventListener('scroll', ver, {passive:true}); ver();
+  })();
+  </script>
+
+  <!-- ===== Carrossel de depoimentos ===== -->
+  <script>
+  /* ==========================================================================
+     SEUS DEPOIMENTOS — adicione aqui conforme os clientes forem chegando.
+     Enquanto a lista estiver vazia, a seção NAO aparece no site.
+     Peça sempre autorização do cliente antes de publicar nome e foto.
+
+     Modelo:
+     { texto: "O que o cliente falou, com as palavras dele.",
+       nome:  "Nome do cliente",
+       cargo: "Cidade — ou empresa, se for cliente empresarial",
+       foto:  "",            // opcional: "clientes/nome.jpg" (deixe "" p/ usar as iniciais)
+       estrelas: 5 }         // opcional
+     ========================================================================== */
+  var DEPOIMENTOS = [
+    // { texto: "...", nome: "...", cargo: "...", foto: "", estrelas: 5 },
+  ];
+
+  (function(){
+    var sec = document.getElementById('depoimentos');
+    if (!DEPOIMENTOS.length) return;              // sem depoimentos, seção fica oculta
+    sec.style.display = '';
+
+    var track = document.getElementById('dep-track'),
+        dots  = document.getElementById('dep-dots');
+
+    DEPOIMENTOS.forEach(function(d, i){
+      var ini = (d.nome||'?').trim().split(/\s+/).filter(function(p){return p.length>2})
+                 .slice(0,2).map(function(p){return p[0].toUpperCase()}).join('');
+      var el = document.createElement('div');
+      el.className = 'car__item';
+      el.innerHTML =
+        (d.estrelas ? '<div class="car__stars">' + '★'.repeat(d.estrelas) + '</div>' : '') +
+        '<div class="car__quote">“' + d.texto + '”</div>' +
+        '<div class="car__who">' +
+          '<div class="car__av">' + (d.foto ? '<img src="'+d.foto+'" alt="'+d.nome+'">' : ini) + '</div>' +
+          '<div><div class="car__nome">' + d.nome + '</div>' +
+          (d.cargo ? '<div class="car__cargo">' + d.cargo + '</div>' : '') + '</div>' +
+        '</div>';
+      track.appendChild(el);
+
+      var b = document.createElement('button');
+      b.className = 'car__dot' + (i===0 ? ' on' : '');
+      b.setAttribute('aria-label', 'Depoimento ' + (i+1));
+      b.onclick = function(){ irPara(i); };
+      dots.appendChild(b);
+    });
+
+    var atual = 0;
+    function larguraItem(){
+      var it = track.querySelector('.car__item');
+      return it ? it.offsetWidth + 18 : track.offsetWidth;
+    }
+    function irPara(i){
+      atual = Math.max(0, Math.min(i, DEPOIMENTOS.length-1));
+      track.scrollTo({ left: atual * larguraItem(), behavior: 'smooth' });
+      marcar();
+    }
+    function marcar(){
+      dots.querySelectorAll('.car__dot').forEach(function(d,i){ d.classList.toggle('on', i===atual); });
+    }
+    document.getElementById('dep-prev').onclick = function(){ irPara(atual-1); };
+    document.getElementById('dep-next').onclick = function(){ irPara(atual+1); };
+
+    // acompanha o arrasto/swipe do usuário
+    var t;
+    track.addEventListener('scroll', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        atual = Math.round(track.scrollLeft / larguraItem());
+        marcar();
+      }, 90);
+    }, {passive:true});
+  })();
+  </script>
+
+  <!-- ===== Velocímetro ===== -->
+  <div class="gauge" id="gauge" aria-hidden="true">
+    <svg viewBox="0 0 200 168">
+      <path d="M30 148 A80 80 0 1 1 170 148" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="10" stroke-linecap="round"/>
+      <path id="gauge-arc" d="M30 148 A80 80 0 1 1 170 148" fill="none" stroke="url(#gg)" stroke-width="10" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="gg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#23A455"/><stop offset="1" stop-color="#F5B23E"/>
+        </linearGradient>
+      </defs>
+      <text id="gauge-num" class="gauge__val" x="100" y="112" text-anchor="middle" font-size="34">0</text>
+      <text class="gauge__unit" x="100" y="132" text-anchor="middle" font-size="11">MWh</text>
+      <text class="gauge__label" x="100" y="160" text-anchor="middle" font-size="8">ENERGIA LIMPA GERADA</text>
+    </svg>
+  </div>
+
+  <!-- ===== Lógica do velocímetro ===== -->
+  <script>
+  (function(){
+    var g = document.getElementById('gauge'),
+        arc = document.getElementById('gauge-arc'),
+        num = document.getElementById('gauge-num');
+    if (!g || !arc) return;
+
+    var MAX = 180000000;          // 180 milhões
+    var len = arc.getTotalLength();
+    arc.style.strokeDasharray = len;
+    arc.style.strokeDashoffset = len;
+
+    var mostrado = 0, alvo = 0;
+    var fmt = new Intl.NumberFormat('pt-BR', {maximumFractionDigits:0});
+
+    function onScroll(){
+      var h = document.documentElement;
+      var max = h.scrollHeight - innerHeight;
+      var p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+      alvo = p;
+      g.classList.toggle('on', window.scrollY > innerHeight * 0.25);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    onScroll();
+
+    (function loop(){
+      mostrado += (alvo - mostrado) * 0.08;         // suaviza o ponteiro
+      arc.style.strokeDashoffset = len * (1 - mostrado);
+      var v = Math.round(mostrado * MAX);
+      // encolhe a fonte quando o numero fica grande
+      num.setAttribute('font-size', v >= 100000000 ? 20 : v >= 1000000 ? 24 : 34);
+      num.textContent = v >= 1000000 ? (v/1000000).toFixed(1).replace('.',',') + ' mi' : fmt.format(v);
+      requestAnimationFrame(loop);
+    })();
+  })();
+  </script>
+
+  <script>
+  (function(){
+    if (new URLSearchParams(location.search).get('enviado') === '1'){
+      var f = document.querySelector('.form'), ok = document.getElementById('form-ok');
+      if (f && ok){ f.style.display='none'; ok.classList.add('show');
+        document.getElementById('contato').scrollIntoView({behavior:'smooth'}); }
+    }
   })();
   </script>
 </body>
