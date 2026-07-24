@@ -672,7 +672,7 @@
         se preferir, chame no WhatsApp pelo botão ao lado.
       </p>
 
-      <form class="form" name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?enviado=1">
+      <form class="form" id="form-contato" name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contato">
         <p style="display:none"><label>Não preencha: <input name="bot-field"></label></p>
 
@@ -1279,11 +1279,29 @@ const SCENES = [
 
   <script>
   (function(){
-    if (new URLSearchParams(location.search).get('enviado') === '1'){
-      var f = document.querySelector('.form'), ok = document.getElementById('form-ok');
-      if (f && ok){ f.style.display='none'; ok.classList.add('show');
-        document.getElementById('contato').scrollIntoView({behavior:'smooth'}); }
-    }
+    var f = document.getElementById('form-contato'),
+        ok = document.getElementById('form-ok');
+    if (!f) return;
+    var btn = f.querySelector('button[type=submit]');
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      btn.disabled = true; btn.textContent = 'Enviando…';
+      var dados = new URLSearchParams(new FormData(f)).toString();
+      fetch('/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: dados
+      }).then(function(r){
+        if (!r.ok) throw new Error('falha');
+        f.style.display = 'none';
+        ok.classList.add('show');
+        ok.scrollIntoView({behavior:'smooth', block:'center'});
+      }).catch(function(){
+        btn.disabled = false; btn.textContent = 'Enviar mensagem';
+        alert('Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.');
+      });
+    });
   })();
   </script>
 </body>
