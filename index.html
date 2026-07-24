@@ -1250,12 +1250,16 @@ const SCENES = [
     var mostrado = 0, alvo = 0;
     var fmt = new Intl.NumberFormat('pt-BR', {maximumFractionDigits:0});
 
+    var hero = document.getElementById('hero');
     function onScroll(){
-      var h = document.documentElement;
-      var max = h.scrollHeight - innerHeight;
-      var p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+      // progresso DENTRO do hero (0 no topo, 1 quando o video termina)
+      var top = hero.offsetTop, alt = hero.offsetHeight - innerHeight;
+      var p = alt > 0 ? (window.scrollY - top) / alt : 0;
+      p = Math.min(Math.max(p, 0), 1);
       alvo = p;
-      g.classList.toggle('on', window.scrollY > innerHeight * 0.25);
+      // so aparece durante o hero: some ao passar dele (e antes de comecar a rolar)
+      var dentro = window.scrollY > innerHeight * 0.15 && p < 0.999;
+      g.classList.toggle('on', dentro);
     }
     window.addEventListener('scroll', onScroll, {passive:true});
     window.addEventListener('resize', onScroll, {passive:true});
