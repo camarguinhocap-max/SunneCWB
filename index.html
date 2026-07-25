@@ -479,7 +479,7 @@
 <body>
   <form name="contato" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="nome"><input type="text" name="sobrenome">
-    <input type="tel" name="telefone"><input type="text" name="assunto">
+    <input type="tel" name="telefone"><input type="email" name="email"><input type="text" name="assunto">
     <textarea name="mensagem"></textarea>
   </form>
 
@@ -585,9 +585,8 @@
       <div class="eyebrow">Torne-se um Assessor</div>
       <h2 class="section__title">Seja um Assessor de Energia Sunne</h2>
       <p class="section__lead">
-        Ajude casas e empresas do Paraná e região a economizar com energia limpa —
-        e construa uma <b>renda recorrente</b> com a plataforma, a marca e o suporte
-        da Sunne por trás de você.
+        Transforme energia limpa em <b>renda recorrente</b>. Você atende,
+        a Sunne dá a estrutura, o mercado faz o resto.
       </p>
 
       <div class="cards">
@@ -687,9 +686,15 @@
           </div>
         </div>
 
-        <div>
-          <label class="flabel" for="c-tel">Telefone / WhatsApp</label>
-          <input class="finput" id="c-tel" name="telefone" type="tel" required inputmode="tel" placeholder="(41) 90000-0000" autocomplete="tel">
+        <div class="form__grid">
+          <div>
+            <label class="flabel" for="c-tel">Telefone / WhatsApp</label>
+            <input class="finput" id="c-tel" name="telefone" type="tel" required inputmode="tel" placeholder="(41) 90000-0000" autocomplete="tel">
+          </div>
+          <div>
+            <label class="flabel" for="c-email">E-mail</label>
+            <input class="finput" id="c-email" name="email" type="email" required inputmode="email" placeholder="voce@email.com" autocomplete="email">
+          </div>
         </div>
 
         <div>
@@ -1002,11 +1007,11 @@ const SCENES = [
 (function () {
   const CFG = {
     green:'#2FD173', gold:'#F5B23E',
-    lineWidth:1.2, glow:8, baseAlpha:0.42, coreAlpha:0.9,
+    lineWidth:1.2, glow:8, baseAlpha:0, coreAlpha:0,
     spotSize:460, spotAlpha:0.22, ease:0.12,
     segH:340, marginX:0.10, samples:18,
-    headBias:0.6,   // onde a "ponta" fica na tela (0.6 = 60% da altura)
-    spark:true,
+    headBias:0.6,
+    spark:false,
   };
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const coarse = matchMedia('(hover: none)').matches;
@@ -1106,7 +1111,7 @@ const SCENES = [
   window.addEventListener('load',build);
   document.addEventListener('toggle',build,true);
   let lastH=0; setInterval(()=>{ const h=document.documentElement.scrollHeight; if(Math.abs(h-lastH)>40){lastH=h;build();} },700);
-  build(); requestAnimationFrame(draw);
+  /* linha desativada */ requestAnimationFrame(draw);
 })();
 </script>
 
