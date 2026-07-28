@@ -26,7 +26,7 @@ exports.handler = async (event) => {
   let debug = null;
 
   try {
-    const store = getStore("whatsapp-round-robin");
+    const store = getStore({ name: "whatsapp-round-robin", consistency: "strong" });
     const raw = await store.get("counter-economizar");
     const count = raw ? parseInt(raw, 10) || 0 : 0;
     number = NUMBERS[count % NUMBERS.length];
