@@ -19,6 +19,7 @@ const NUMBERS = [
 
 exports.handler = async () => {
   let number = NUMBERS[0];
+  let debug = null;
 
   try {
     const store = getStore("whatsapp-round-robin");
@@ -26,9 +27,11 @@ exports.handler = async () => {
     const count = raw ? parseInt(raw, 10) || 0 : 0;
     number = NUMBERS[count % NUMBERS.length];
     await store.set("counter-economizar", String(count + 1));
+    debug = { raw, count };
   } catch (err) {
-    // Mantém o fallback (Junior) se algo der errado com o Blobs.
+    // TEMPORÁRIO: expõe o erro pra diagnosticar. Tirar depois de confirmar que funciona.
     number = NUMBERS[0];
+    debug = { error: String(err && err.message || err) };
   }
 
   return {
@@ -38,6 +41,6 @@ exports.handler = async () => {
       "cache-control": "no-store",
       "access-control-allow-origin": "*",
     },
-    body: JSON.stringify({ number }),
+    body: JSON.stringify({ number, debug }),
   };
 };
