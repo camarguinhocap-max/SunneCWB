@@ -1,0 +1,8 @@
+{
+  "name": "sunne-sul-site",
+  "private": true,
+  "description": "Site estatico da Sunne Sul (Netlify). package.json existe so para a Netlify Function de rodizio de WhatsApp.",
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0"
+  }
+}

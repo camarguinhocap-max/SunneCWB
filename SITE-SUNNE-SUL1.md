@@ -56,6 +56,51 @@ exatos do deck.
 
 ---
 
+## 0.2 NOVIDADE DE 2026-07-28 (2ª rodada) — Rodízio de WhatsApp
+
+O site ganhou a **primeira peça de backend** (antes era 100% estático). Motivo: alternar
+exatamente entre Junior e Josmair nos botões **"Quero economizar" / "Quero minha simulação
+real"** de `energia-por-assinatura.html` (1º clique do site → Junior, 2º → Josmair, 3º →
+Junior, e assim por diante — contador compartilhado entre todos os visitantes).
+
+**Arquivos novos:**
+- `netlify/functions/next-whatsapp.js` — Netlify Function (Node, `exports.handler`) que lê/
+  incrementa um contador no **Netlify Blobs** (`getStore("whatsapp-round-robin")`, chave
+  `counter-economizar`) e devolve `{ "number": "..." }`. Se o Blobs falhar por qualquer
+  motivo, devolve sempre o número do Junior (fallback seguro).
+- `package.json` (raiz) — só existe para declarar a dependência `@netlify/blobs`, necessária
+  pra function funcionar. Não afeta o publish do site (o Netlify não precisa rodar build
+  nenhum pro HTML, só instala essa dependência pra empacotar a function).
+- `netlify.toml` (raiz) — declara `functions = "netlify/functions"`. **Não mexe** na pasta de
+  publish do site (deixado como já estava configurado no painel Netlify, pra não arriscar
+  quebrar o deploy do site estático).
+
+**Como funciona no HTML:** os 4 botões relevantes em `energia-por-assinatura.html` (hero,
+"como funciona", simulador, banda final) ganharam a classe extra `js-wa-split` além da
+`js-wa` que já existia. Um novo `<script>` intercepta o clique nesses botões, chama
+`/.netlify/functions/next-whatsapp` (timeout de 1.8s) e abre o WhatsApp do número
+retornado. Se a function falhar ou demorar, cai no link padrão do Junior — o comportamento
+não regride, só passa a ter uma chance extra de ir pro Josmair.
+
+**Escopo — só esses 4 botões.** Ficaram de fora, por escolha do dono: o botão flutuante de
+WhatsApp, o botão "Falar no WhatsApp" do header, os botões de `assessor.html` (recrutamento
+continua indo só pro Junior) e as páginas de cartão (`cartao.html`/`cartao-junior.html`, que
+têm que ir pro dono do cartão). Os CTAs dos artigos do blog ("Falar com um assessor") também
+não foram incluídos — avaliar se o dono quer estender pra lá também.
+
+**Limitação conhecida:** a leitura+escrita do contador no Blobs não é 100% atômica (não usa
+`onlyIfMatch`/retry). Em tráfego baixo (site de negócio local) isso não é um problema real;
+só em cliques simultâneos muito próximos (mesmo milissegundo) o rodízio poderia,
+raramente, repetir um número em vez de alternar. Se o volume de leads crescer muito, dá pra
+reforçar com concorrência otimista.
+
+**Para testar depois do deploy:** abrir
+`https://sunnesul.com.br/.netlify/functions/next-whatsapp` duas vezes seguidas no navegador
+(ou via curl) — o `number` retornado deve alternar entre `5541984738591` (Junior) e
+`5541998308282` (Josmair).
+
+---
+
 ## 0. CHANGELOG / ESTADO ATUAL (leia primeiro)
 
 > Esta seção foi reconstruída em **2026-07-28** comparando o `.md` (parado em 24/07) com o
@@ -126,6 +171,7 @@ Base em **Curitiba/PR**, mas atende **todo o Paraná** e, quando possível, esta
 | DNS / Proxy / Segurança | **Cloudflare** (nameservers: yevgen.ns.cloudflare.com + katja.ns.cloudflare.com) |
 | Deploy | Push no GitHub → Netlify publica automaticamente |
 | Pasta local | `D:\Sites Claude\Sunne` |
+| Functions | **Desde 2026-07-28:** `netlify/functions/next-whatsapp.js` (rodízio de WhatsApp), usa Netlify Blobs. Ver seção 0.2. |
 
 ### DNS no Cloudflare
 - `@` (raiz): CNAME → `apex-loadbalancer.netlify.com` — **proxy LARANJA (ligado)**

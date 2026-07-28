@@ -280,7 +280,7 @@
         <span>SEM dor de cabeça</span>
       </div>
       <div class="cta-row">
-        <a class="btn js-wa" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">
+        <a class="btn js-wa js-wa-split" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6 8.9a5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c2.1.9 2.1.6 2.5.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
           Quero economizar
         </a>
@@ -347,7 +347,7 @@
         <div class="step"><div class="step__n">03</div><h4>Você paga menos</h4><p>A soma das duas partes fica bem abaixo do que você pagaria sem o modelo.</p></div>
       </div>
       <div class="cta-row">
-        <a class="btn js-wa" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">Quero economizar</a>
+        <a class="btn js-wa js-wa-split" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">Quero economizar</a>
       </div>
     </div>
   </section>
@@ -413,7 +413,7 @@
       </div>
 
       <div class="cta-row">
-        <a class="btn js-wa" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">Quero minha simulação real</a>
+        <a class="btn js-wa js-wa-split" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">Quero minha simulação real</a>
       </div>
     </div>
   </section>
@@ -470,7 +470,7 @@
       <h2>Comece a economizar hoje</h2>
       <p class="lead">Fale com a gente no WhatsApp, envie uma conta de luz recente e receba uma simulação de quanto você pode economizar.</p>
       <div class="cta-row">
-        <a class="btn js-wa" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">Quero economizar</a>
+        <a class="btn js-wa js-wa-split" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne.">Quero economizar</a>
         <a class="btn btn--ghost" href="/assessor">Quero ser Assessor</a>
       </div>
       <p class="note">Desconto de até 20% conforme análise do perfil de consumo e disponibilidade de usina na sua região. Sujeito a contrato.</p>
@@ -502,6 +502,42 @@
   const MSG = "Olá! Quero reduzir minha conta de energia com a Sunne.";
   const link = "https://wa.me/" + WHATSAPP.replace(/\D/g, "") + "?text=" + encodeURIComponent(MSG);
   document.querySelectorAll('.js-wa').forEach(a => { a.href = link; a.target = "_blank"; a.rel = "noopener"; });
+</script>
+<script>
+  // ===== Rodizio de WhatsApp (Junior / Josmair) nos botoes "Quero economizar" =====
+  // Cada clique consulta a Netlify Function next-whatsapp, que alterna exatamente
+  // entre os dois numeros (contador guardado no Netlify Blobs). Se a function falhar
+  // ou demorar, cai no link padrao do Junior (que ja esta no href por causa do script acima).
+  (function () {
+    var SPLIT_MSG = "Olá! Quero economizar na conta de luz com a Sunne.";
+    var els = document.querySelectorAll('.js-wa-split');
+    if (!els.length) return;
+
+    els.forEach(function (a) {
+      a.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        var fallbackHref = a.href;
+        var controller = ('AbortController' in window) ? new AbortController() : null;
+        var timeoutId = controller ? setTimeout(function () { controller.abort(); }, 1800) : null;
+
+        fetch('/.netlify/functions/next-whatsapp', {
+          cache: 'no-store',
+          signal: controller ? controller.signal : undefined
+        })
+          .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('bad response')); })
+          .then(function (data) {
+            if (timeoutId) clearTimeout(timeoutId);
+            if (!data || !data.number) throw new Error('sem numero');
+            var url = 'https://wa.me/' + data.number + '?text=' + encodeURIComponent(SPLIT_MSG);
+            window.open(url, '_blank', 'noopener');
+          })
+          .catch(function () {
+            if (timeoutId) clearTimeout(timeoutId);
+            window.open(fallbackHref, '_blank', 'noopener');
+          });
+      });
+    });
+  })();
 </script>
 <script>
 /* ============================================================================
