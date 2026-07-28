@@ -529,11 +529,11 @@
             if (timeoutId) clearTimeout(timeoutId);
             if (!data || !data.number) throw new Error('sem numero');
             var url = 'https://wa.me/' + data.number + '?text=' + encodeURIComponent(SPLIT_MSG);
-            window.open(url, '_blank', 'noopener');
+            window.location.href = url;
           })
           .catch(function () {
             if (timeoutId) clearTimeout(timeoutId);
-            window.open(fallbackHref, '_blank', 'noopener');
+            window.location.href = fallbackHref;
           });
       });
     });
