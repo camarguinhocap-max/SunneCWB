@@ -10,14 +10,18 @@
 // devolve sempre o número do Junior — mesmo comportamento que o site
 // já tinha antes desta automação, então nada quebra.
 
-const { getStore } = require("@netlify/blobs");
+const { getStore, connectLambda } = require("@netlify/blobs");
 
 const NUMBERS = [
   "5541984738591", // Junior
   "5541998308282", // Josmair
 ];
 
-exports.handler = async () => {
+exports.handler = async (event) => {
+  // Necessário no modo "Lambda compatibility": sem isso, o Blobs não sabe
+  // em qual site/deploy está rodando (erro MissingBlobsEnvironmentError).
+  connectLambda(event);
+
   let number = NUMBERS[0];
   let debug = null;
 
