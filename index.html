@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18142105077"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18142105077');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Sua Energia — do sol até a sua casa</title>
+<title>Sunne Sul — Energia Limpa e Mais Barata no Paraná e Região Sul</title>
+<meta name="description" content="Reduza até 20% na conta de luz com energia limpa por assinatura no Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. Sem obras, sem instalação e sem investimento. Fale com um assessor Sunne.">
+<meta name="keywords" content="energia por assinatura parana, energia por assinatura curitiba, energia por assinatura santa catarina, reduzir conta de luz, energia limpa parana, desconto conta de luz, energia por assinatura sul do brasil, sunne sul">
+<meta name="author" content="Sunne Sul — Assessoria de Energia">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://sunnesul.com.br/">
+
+<!-- Busca local -->
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<meta name="coverage" content="Paraná, Santa Catarina, São Paulo, Mato Grosso do Sul">
+<meta name="geo.position" content="-25.4284;-49.2733">
+<meta name="ICBM" content="-25.4284, -49.2733">
+
+<!-- Compartilhamento (WhatsApp, Facebook, Instagram, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunne Sul">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://sunnesul.com.br/">
+<meta property="og:title" content="Sunne Sul — Energia Limpa e Mais Barata no Paraná e Região Sul">
+<meta property="og:description" content="Reduza até 20% na conta de luz com energia limpa por assinatura no Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. Sem obras, sem instalação e sem investimento. Fale com um assessor Sunne.">
+<meta property="og:image" content="https://sunnesul.com.br/hero-poster.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="Fazenda solar ao amanhecer — energia limpa Sunne">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sunne Sul — Energia Limpa e Mais Barata no Paraná e Região Sul">
+<meta name="twitter:description" content="Reduza até 20% na conta de luz com energia limpa por assinatura no Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. Sem obras, sem instalação e sem investimento. Fale com um assessor Sunne.">
+<meta name="twitter:image" content="https://sunnesul.com.br/hero-poster.jpg">
+
+<meta name="theme-color" content="#0A0A0B">
+
 
 <!--
 ==================================================================================
@@ -18,6 +58,11 @@
 ==================================================================================
 -->
 
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -265,19 +310,197 @@
   .section--assessor { background: radial-gradient(120% 90% at 80% 0%, rgba(35,164,85,0.10), transparent 55%), var(--stage); }
 
   @media (max-width: 820px) { .cards, .steps { grid-template-columns: 1fr; } }
+
+  /* ===== Rodape (igual ao das outras paginas) ===== */
+  .footer { padding:48px calc(clamp(24px,6vw,64px) + var(--sar)) calc(40px + var(--sab)) calc(clamp(24px,6vw,64px) + var(--sal)); border-top:1px solid rgba(255,255,255,0.06); background:var(--stage); }
+  .footer__inner { max-width:1000px; margin:0 auto; display:flex; flex-wrap:wrap; gap:22px; align-items:center; justify-content:space-between; }
+  .footer img { height:26px; width:auto; opacity:0.9; }
+  .footer nav { display:flex; flex-wrap:wrap; gap:18px; }
+  .footer a { color:var(--muted); text-decoration:none; font-size:0.92rem; }
+  .footer a:hover { color:var(--text); }
+  .footer small { display:block; width:100%; color:rgba(154,148,139,0.7); font-size:0.8rem; margin-top:8px; }
+
+  /* H1 semantico: invisivel no layout, lido por buscadores e leitores de tela */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* ===== Carrossel (depoimentos + mídia) ===== */
+  .car{position:relative;margin-top:44px}
+  .car__track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;padding-bottom:6px;-ms-overflow-style:none;scrollbar-width:none}
+  .car__track::-webkit-scrollbar{display:none}
+  .car__item{flex:0 0 min(420px,86%);scroll-snap-align:center;padding:30px;border-radius:20px;
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09)}
+  .car__quote{font-family:var(--font-display);font-weight:400;font-size:clamp(1.05rem,2.1vw,1.28rem);
+    line-height:1.5;color:var(--text)}
+  .car__who{margin-top:20px;display:flex;align-items:center;gap:13px}
+  .car__av{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--brand),#18703a);color:#fff;font-family:var(--font-display);font-size:1.05rem}
+  .car__av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .car__nome{font-weight:600;font-size:.98rem}
+  .car__cargo{color:var(--muted);font-size:.86rem;margin-top:2px}
+  .car__stars{color:var(--accent);font-size:.95rem;letter-spacing:.12em;margin-bottom:14px}
+  .car__nav{margin-top:22px;display:flex;align-items:center;gap:14px}
+  .car__btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);color:var(--text);
+    transition:all .18s var(--ease)}
+  .car__btn:hover{border-color:var(--brand);color:var(--brand)}
+  .car__btn svg{width:18px;height:18px}
+  .car__dots{display:flex;gap:7px;margin-left:auto}
+  .car__dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);border:0;padding:0;cursor:pointer;transition:all .2s var(--ease)}
+  .car__dot.on{background:var(--brand);width:22px;border-radius:4px}
+
+  /* faixa de imprensa */
+  .press{margin-top:40px;display:grid;gap:14px}
+  .press a{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:18px 20px;border-radius:14px;
+    text-decoration:none;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);
+    transition:border-color .2s var(--ease),background .2s var(--ease)}
+  .press a:hover{border-color:var(--brand);background:rgba(35,164,85,.05)}
+  .press b{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);flex:none}
+  .press span{color:var(--muted);font-size:.98rem;line-height:1.5}
+
+  /* ===== Velocímetro de energia (canto inferior direito) ===== */
+  .gauge{position:fixed !important;z-index:55;left:calc(20px + env(safe-area-inset-left,0px));
+    bottom:calc(20px + env(safe-area-inset-bottom,0px));width:150px;pointer-events:none;
+    opacity:0;transform:translateY(14px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+  .gauge.on{opacity:1;transform:translateY(0)}
+  .gauge svg{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 20px rgba(0,0,0,.5))}
+  .gauge__val{font-family:var(--font-display);font-weight:400;fill:var(--text)}
+  .gauge__unit{font-family:var(--font-ui);font-weight:600;fill:var(--muted);letter-spacing:.12em}
+  .gauge__label{font-family:var(--font-ui);fill:var(--muted);letter-spacing:.16em}
+  @media (max-width:600px){.gauge{width:118px;left:14px;bottom:14px}}
+  @media (prefers-reduced-motion:reduce){.gauge{transition:none}}
+
+  /* ===== Seção de contato ===== */
+  .form{margin-top:44px;max-width:620px;display:grid;gap:16px}
+  .form__grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .flabel{display:block;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:9px}
+  .finput,.fselect,.ftext{width:100%;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.13);
+    border-radius:13px;padding:15px 16px;color:var(--text);font-family:var(--font-ui);font-size:1rem;outline:0;transition:border-color .18s var(--ease)}
+  .ftext{min-height:130px;resize:vertical;line-height:1.55}
+  .finput:focus,.fselect:focus,.ftext:focus{border-color:var(--brand)}
+  .fselect{appearance:none;-webkit-appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239A948B' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+  .fselect option{background:#111013;color:var(--text)}
+  .form .btn{justify-self:start;margin-top:6px;border:0;cursor:pointer;height:54px;padding:0 34px;font-size:1rem}
+  .form__ok{display:none;padding:26px;border-radius:16px;background:rgba(35,164,85,.08);border:1px solid rgba(35,164,85,.3);color:var(--text);line-height:1.6}
+  .form__ok.show{display:block}
+  .fnote{color:rgba(154,148,139,.8);font-size:.82rem;line-height:1.5}
+  @media (max-width:560px){.form__grid{grid-template-columns:1fr}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://sunnesul.com.br/#organizacao",
+  "name": "Sunne Sul — Assessoria de Energia",
+  "description": "Assessoria de energia por assinatura no Paraná e região Sul: energia limpa com desconto na conta de luz, sem obras e sem investimento.",
+  "url": "https://sunnesul.com.br",
+  "image": "https://sunnesul.com.br/hero-poster.jpg",
+  "logo": "https://sunnesul.com.br/Sunne-nova-logo-19.webp",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -25.4284,
+    "longitude": -49.2733
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Paraná"
+    },
+    {
+      "@type": "State",
+      "name": "Santa Catarina"
+    },
+    {
+      "@type": "State",
+      "name": "São Paulo"
+    },
+    {
+      "@type": "State",
+      "name": "Mato Grosso do Sul"
+    }
+  ],
+  "knowsAbout": [
+    "energia por assinatura",
+    "energia solar",
+    "geração distribuída",
+    "redução de conta de luz"
+  ],
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "Energia por assinatura com desconto na conta de luz",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Energia limpa por assinatura",
+      "serviceType": "Fornecimento de energia renovável por assinatura",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Paraná"
+        },
+        {
+          "@type": "State",
+          "name": "Santa Catarina"
+        },
+        {
+          "@type": "State",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "State",
+          "name": "Mato Grosso do Sul"
+        }
+      ]
+    }
+  },
+  "telephone": "+5541984738591",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+5541984738591",
+      "areaServed": [
+        "BR-PR",
+        "BR-SC",
+        "BR-SP",
+        "BR-MS"
+      ],
+      "availableLanguage": [
+        "Portuguese"
+      ]
+    }
+  ],
+  "sameAs": [
+    "https://sunne.com.br"
+  ]
+}
+</script>
 </head>
 
 <body>
+  <form name="contato" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nome"><input type="text" name="sobrenome">
+    <input type="tel" name="telefone"><input type="email" name="email"><input type="text" name="assunto">
+    <textarea name="mensagem"></textarea>
+  </form>
 
   <!-- ============================ HERO ============================ -->
+  <h1 class="sr-only">Sunne Sul — energia limpa e mais barata para casas e empresas em todo o Paraná e região Sul do Brasil</h1>
+
   <section class="hero" id="hero">
     <div class="hero__pin">
 
       <video class="hero__video" id="hero-video"
              muted playsinline preload="auto"
              poster="hero-poster.jpg" disablepictureinpicture>
-        <source src="hero.webm" type="video/webm">
         <source src="hero.mp4"  type="video/mp4">
       </video>
 
@@ -289,7 +512,7 @@
           <img class="hero__logo" src="Sunne-nova-logo-19.webp" alt="Sunne">
           <!-- Se o logo ficar escuro demais na hero, troque acima por: Sunne-nova-logo-19-115px.webp
                E se voce guardar as imagens numa subpasta, ajuste o caminho (ex.: assets/Sunne-nova-logo-19.webp) -->
-          <div class="hero__kicker">Curitiba · Paraná<br><b>Assessoria de energia Sunne</b></div>
+          <div class="hero__kicker">Paraná · Região Sul<br><b>Assessoria de energia Sunne</b></div>
         </div>
         <div class="hero__index"><span class="now" id="scene-now">01</span> <span class="total">/ 10</span></div>
       </div>
@@ -318,7 +541,7 @@
       <div class="eyebrow">Quero reduzir minha conta</div>
       <h2 class="section__title">Por que a Sunne é pra você</h2>
       <p class="section__lead">
-        Energia limpa e mais barata para a sua casa ou empresa em Curitiba e região —
+        Energia limpa e mais barata para a sua casa ou empresa no Paraná e região —
         sem obras, sem investimento e com adesão 100% digital. Você continua recebendo
         energia normalmente, só que <b>mais barata</b>.
       </p>
@@ -355,12 +578,12 @@
 
       <div class="steps">
         <div class="step"><div class="step__n">01</div><h4>Usinas renováveis</h4><p>Usinas solares sob gestão, prontas para enviar energia à sua casa ou negócio.</p></div>
-        <div class="step"><div class="step__n">02</div><h4>Melhor oferta pra você</h4><p>Buscamos, entre os produtores do Paraná, a maior economia disponível pra você.</p></div>
+        <div class="step"><div class="step__n">02</div><h4>Melhor oferta pra você</h4><p>Buscamos, entre os produtores da região, a maior economia disponível pra você.</p></div>
         <div class="step"><div class="step__n">03</div><h4>Energia mais barata</h4><p>Você passa a receber energia limpa das usinas parceiras — e paga menos.</p></div>
       </div>
 
       <div class="cta-row">
-        <a class="btn" href="energia-por-assinatura.html">Quero economizar</a>
+        <a class="btn" href="/energia-por-assinatura">Quero economizar</a>
       </div>
     </div>
   </section>
@@ -371,9 +594,8 @@
       <div class="eyebrow">Torne-se um Assessor</div>
       <h2 class="section__title">Seja um Assessor de Energia Sunne</h2>
       <p class="section__lead">
-        Ajude casas e empresas de Curitiba e região a economizar com energia limpa —
-        e construa uma <b>renda recorrente</b> com a plataforma, a marca e o suporte
-        da Sunne por trás de você.
+        Transforme energia limpa em <b>renda recorrente</b>. Você atende,
+        a Sunne dá a estrutura, o mercado faz o resto.
       </p>
 
       <div class="cards">
@@ -389,21 +611,149 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
           </div>
           <h3>Mercado em expansão</h3>
-          <p>A energia livre e por assinatura cresce rápido no Paraná. Entre agora.</p>
+          <p>A energia livre e por assinatura cresce rápido no Sul do país. Entre agora.</p>
         </div>
       </div>
 
       <div class="cta-row">
-        <a class="btn" href="assessor.html">Quero ser Assessor</a>
+        <a class="btn" href="/assessor">Quero ser Assessor</a>
         <a class="btn btn--ghost" href="#reduzir">Só quero economizar</a>
       </div>
     </div>
   </section>
 
+
+  <!-- ============ DEPOIMENTOS (aparece só quando houver) ============ -->
+  <section class="section" id="depoimentos" style="display:none">
+    <div class="wrap">
+      <div class="eyebrow">Quem já economiza</div>
+      <h2 class="section__title">O que dizem nossos clientes</h2>
+      <div class="car">
+        <div class="car__track" id="dep-track"></div>
+        <div class="car__nav">
+          <button class="car__btn" id="dep-prev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="car__btn" id="dep-next" aria-label="Próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="car__dots" id="dep-dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUNNE NA MÍDIA ============ -->
+  <section class="section" id="midia">
+    <div class="wrap">
+      <div class="eyebrow">Sunne na mídia</div>
+      <h2 class="section__title">A marca que representamos</h2>
+      <p class="section__lead">
+        A Sunne, marca da qual somos assessores no Paraná e região Sul, já foi destaque
+        na imprensa nacional de negócios e sustentabilidade.
+      </p>
+      <div class="press">
+        <a href="https://valor.globo.com/publicacoes/suplementos/noticia/2021/08/30/monitoramento-em-tempo-real-evita-desperdicios.ghtml" target="_blank" rel="noopener">
+          <b>Valor Econômico</b><span>Monitoramento em tempo real evita desperdícios de energia</span>
+        </a>
+        <a href="https://exame.com/esg/brasil-tem-343-startups-de-esg-mostra-relatorio-da-ace/" target="_blank" rel="noopener">
+          <b>Exame</b><span>Brasil tem 343 startups de ESG, segundo relatório da ACE</span>
+        </a>
+        <a href="https://startups.com.br/alem-da-faria-lima/alem-da-faria-lima-no-ceara-sunne-busca-seu-lugar-ao-sol-com-oferta-de-energias-renovaveis/" target="_blank" rel="noopener">
+          <b>Startups.com.br</b><span>A Sunne e sua oferta de energias renováveis</span>
+        </a>
+        <a href="https://www.suno.com.br/noticias/eneva-enev3-gvangels-aportam-startup-energia-renovavel/" target="_blank" rel="noopener">
+          <b>Suno</b><span>Eneva e GVAngels aportam R$ 1 milhão na startup de energia renovável</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CONTATO ============ -->
+  <section class="section" id="contato">
+    <div class="wrap">
+      <div class="eyebrow">Fale com a gente</div>
+      <h2 class="section__title">Entre em contato</h2>
+      <p class="section__lead">
+        Tem uma dúvida ou quer uma simulação da sua economia? Preencha abaixo — ou,
+        se preferir, chame no WhatsApp pelo botão ao lado.
+      </p>
+
+      <form class="form" id="form-contato" name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contato">
+        <p style="display:none"><label>Não preencha: <input name="bot-field"></label></p>
+
+        <div class="form__grid">
+          <div>
+            <label class="flabel" for="c-nome">Nome</label>
+            <input class="finput" id="c-nome" name="nome" type="text" required autocomplete="given-name">
+          </div>
+          <div>
+            <label class="flabel" for="c-sobrenome">Sobrenome</label>
+            <input class="finput" id="c-sobrenome" name="sobrenome" type="text" required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="form__grid">
+          <div>
+            <label class="flabel" for="c-tel">Telefone / WhatsApp</label>
+            <input class="finput" id="c-tel" name="telefone" type="tel" required inputmode="tel" placeholder="(41) 90000-0000" autocomplete="tel">
+          </div>
+          <div>
+            <label class="flabel" for="c-email">E-mail</label>
+            <input class="finput" id="c-email" name="email" type="email" required inputmode="email" placeholder="voce@email.com" autocomplete="email">
+          </div>
+        </div>
+
+        <div>
+          <label class="flabel" for="c-assunto">Assunto</label>
+          <select class="fselect" id="c-assunto" name="assunto" required>
+            <option value="" selected disabled>Selecione…</option>
+            <option>Quero reduzir minha conta de luz</option>
+            <option>Quero ser Assessor de Energia</option>
+            <option>Sou empresa / condomínio</option>
+            <option>Dúvidas sobre energia por assinatura</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="flabel" for="c-msg">Descrição do assunto</label>
+          <textarea class="ftext" id="c-msg" name="mensagem" required placeholder="Conte um pouco sobre o que você precisa. Se for reduzir a conta, o valor médio da sua fatura ajuda."></textarea>
+        </div>
+
+        <button class="btn" type="submit">Enviar mensagem</button>
+        <p class="fnote">Seus dados são usados apenas para responder ao seu contato.</p>
+      </form>
+
+      <div class="form__ok" id="form-ok">
+        <b>Mensagem enviada!</b><br>
+        Recebemos o seu contato e retornaremos em breve. Se for urgente, chame no WhatsApp pelo botão verde.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= RODAPE ======================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="/"><img src="Sunne-nova-logo-19.webp" alt="Sunne"></a>
+      <nav>
+        <a href="#reduzir">Reduzir minha conta</a>
+        <a href="/energia-por-assinatura">Energia por assinatura</a>
+        <a href="/assessor">Ser assessor</a>
+        <a href="/blog">Artigos</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/cartao">Cartão · Josmair</a>
+        <a href="/cartao-junior">Cartão · Junior</a>
+      </nav>
+      <small>Sunne Sul · Assessoria de energia — Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. Página informativa de parceiro.</small>
+    </div>
+  </footer>
+
   <!-- ===================== MUSICA DE FUNDO ===================== -->
   <!-- Troque o nome se seu arquivo for diferente. Roda solto, em loop. -->
   <audio id="ambient" loop preload="auto">
-    <source src="ambient.ogg" type="audio/ogg">
     <source src="ambient.mp3" type="audio/mpeg">
   </audio>
 
@@ -434,8 +784,8 @@ const CONFIG = {
   stopAudioAtEnd: true,// para a musica quando o video do hero termina.
 
   // >>> COLOQUE OS DOIS NUMEROS DE WHATSAPP AQUI (so numeros: 55 + DDD + numero) <<<
-  whatsappEconomizar: "5541999999999",
-  whatsappAssessor:   "5541999999999",
+  whatsappEconomizar: "5541984738591",
+  whatsappAssessor:   "5541984738591",
   msgEconomizar: "Olá! Quero reduzir minha conta de energia com a Sunne.",
   msgAssessor:   "Olá! Quero me tornar um Assessor de Energia Sunne.",
 };
@@ -474,14 +824,19 @@ const SCENES = [
   let started = false;
   let userMuted = false; // usuario desligou de proposito?
 
+  let fadeToken = 0;
+  const clamp01 = (v) => Math.min(1, Math.max(0, v));
   function fadeTo(target, ms) {
-    const from = audio.volume;
+    const myToken = ++fadeToken;          // cancela qualquer fade anterior
+    const from = clamp01(audio.volume);
+    const to = clamp01(target);
     const t0 = performance.now();
     function step(now) {
+      if (myToken !== fadeToken) return;  // um fade mais novo assumiu
       const k = Math.min((now - t0) / ms, 1);
-      audio.volume = from + (target - from) * k;
+      audio.volume = clamp01(from + (to - from) * k);  // nunca sai de [0,1]
       if (k < 1) requestAnimationFrame(step);
-      else if (target === 0) audio.pause();
+      else if (to === 0) audio.pause();
     }
     requestAnimationFrame(step);
   }
@@ -662,22 +1017,23 @@ const SCENES = [
 (function () {
   const CFG = {
     green:'#2FD173', gold:'#F5B23E',
-    lineWidth:1.2, glow:8, baseAlpha:0.42, coreAlpha:0.9,
+    lineWidth:1.2, glow:8, baseAlpha:0, coreAlpha:0,
     spotSize:460, spotAlpha:0.22, ease:0.12,
     segH:340, marginX:0.10, samples:18,
-    headBias:0.6,   // onde a "ponta" fica na tela (0.6 = 60% da altura)
-    spark:true,
+    headBias:0.6,
+    spark:false,
   };
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const coarse = matchMedia('(hover: none)').matches;
 
   const css = document.createElement('style');
   css.textContent =
-    '#energy-spot,#energy-canvas{position:fixed;inset:0;pointer-events:none}' +
-    '#energy-spot{z-index:-1;mix-blend-mode:screen;background:' +
+    '#energy-spot,#energy-canvas{position:fixed;inset:0;pointer-events:none;z-index:0}' +
+    'body>*:not(#energy-spot):not(#energy-canvas):not(.wa-float):not(.gauge){position:relative;z-index:1}' +
+    '#energy-spot{mix-blend-mode:screen;background:' +
       'radial-gradient(circle '+CFG.spotSize+'px at var(--mx,50%) var(--my,50%),rgba(47,209,115,'+CFG.spotAlpha+') 0%,rgba(47,209,115,'+(CFG.spotAlpha*0.28)+') 38%,transparent 70%),' +
       'radial-gradient(circle '+(CFG.spotSize*1.5)+'px at var(--mx,50%) var(--my,50%),rgba(245,178,62,'+(CFG.spotAlpha*0.30)+') 0%,transparent 60%)}' +
-    '#energy-canvas{z-index:-1}' +
+    
     '.section,.band,.section--assessor,.after{background-color:transparent !important;background-image:none !important}';
   document.head.appendChild(css);
 
@@ -765,8 +1121,216 @@ const SCENES = [
   window.addEventListener('load',build);
   document.addEventListener('toggle',build,true);
   let lastH=0; setInterval(()=>{ const h=document.documentElement.scrollHeight; if(Math.abs(h-lastH)>40){lastH=h;build();} },700);
-  build(); requestAnimationFrame(draw);
+  /* linha desativada */ requestAnimationFrame(draw);
 })();
 </script>
+
+  <!-- ===== Botao flutuante de WhatsApp ===== -->
+  <style>
+    .wa-float{position:fixed !important;z-index:60;right:calc(18px + env(safe-area-inset-right,0px));
+      bottom:calc(18px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;justify-content:center;
+      width:58px;height:58px;padding:0;border-radius:50%;background:#23A455;color:#04120A;
+      font-family:"Hanken Grotesk",system-ui,sans-serif;font-weight:600;font-size:.98rem;text-decoration:none;
+      box-shadow:0 12px 34px rgba(35,164,85,.34);transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s;
+      opacity:0;transform:translateY(14px);pointer-events:none}
+    .wa-float.on{opacity:1;transform:translateY(0);pointer-events:auto}
+    .wa-float:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(35,164,85,.42)}
+    .wa-float:focus-visible{outline:2px solid #F5B23E;outline-offset:3px}
+    .wa-float svg{width:27px;height:27px;flex:none}
+    .wa-float span{display:none}
+    @media (max-width:600px){.wa-float{width:54px;height:54px}}
+    @media (prefers-reduced-motion:reduce){.wa-float{transition:none}}
+  </style>
+  <a class="wa-float" id="wa-float" href="https://wa.me/5541984738591?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Sunne." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6 8.9a5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c2.1.9 2.1.6 2.5.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+  <script>
+  (function(){
+    var NUM = "5541984738591";   // <-- numero unico do botao flutuante
+    var MSG = "Olá! Vim pelo site e quero saber mais sobre a Sunne.";
+    var el = document.getElementById('wa-float');
+    el.href = "https://wa.me/" + NUM.replace(/\D/g,'') + "?text=" + encodeURIComponent(MSG);
+    // aparece depois que o visitante rola um pouco (nao atrapalha o hero)
+    function ver(){ el.classList.toggle('on', scrollY > innerHeight * 0.25); }
+    addEventListener('scroll', ver, {passive:true}); ver();
+  })();
+  </script>
+
+  <!-- ===== Carrossel de depoimentos ===== -->
+  <script>
+  /* ==========================================================================
+     SEUS DEPOIMENTOS — adicione aqui conforme os clientes forem chegando.
+     Enquanto a lista estiver vazia, a seção NAO aparece no site.
+     Peça sempre autorização do cliente antes de publicar nome e foto.
+
+     Modelo:
+     { texto: "O que o cliente falou, com as palavras dele.",
+       nome:  "Nome do cliente",
+       cargo: "Cidade — ou empresa, se for cliente empresarial",
+       foto:  "",            // opcional: "clientes/nome.jpg" (deixe "" p/ usar as iniciais)
+       estrelas: 5 }         // opcional
+     ========================================================================== */
+  var DEPOIMENTOS = [
+    // { texto: "...", nome: "...", cargo: "...", foto: "", estrelas: 5 },
+  ];
+
+  (function(){
+    var sec = document.getElementById('depoimentos');
+    if (!DEPOIMENTOS.length) return;              // sem depoimentos, seção fica oculta
+    sec.style.display = '';
+
+    var track = document.getElementById('dep-track'),
+        dots  = document.getElementById('dep-dots');
+
+    DEPOIMENTOS.forEach(function(d, i){
+      var ini = (d.nome||'?').trim().split(/\s+/).filter(function(p){return p.length>2})
+                 .slice(0,2).map(function(p){return p[0].toUpperCase()}).join('');
+      var el = document.createElement('div');
+      el.className = 'car__item';
+      el.innerHTML =
+        (d.estrelas ? '<div class="car__stars">' + '★'.repeat(d.estrelas) + '</div>' : '') +
+        '<div class="car__quote">“' + d.texto + '”</div>' +
+        '<div class="car__who">' +
+          '<div class="car__av">' + (d.foto ? '<img src="'+d.foto+'" alt="'+d.nome+'">' : ini) + '</div>' +
+          '<div><div class="car__nome">' + d.nome + '</div>' +
+          (d.cargo ? '<div class="car__cargo">' + d.cargo + '</div>' : '') + '</div>' +
+        '</div>';
+      track.appendChild(el);
+
+      var b = document.createElement('button');
+      b.className = 'car__dot' + (i===0 ? ' on' : '');
+      b.setAttribute('aria-label', 'Depoimento ' + (i+1));
+      b.onclick = function(){ irPara(i); };
+      dots.appendChild(b);
+    });
+
+    var atual = 0;
+    function larguraItem(){
+      var it = track.querySelector('.car__item');
+      return it ? it.offsetWidth + 18 : track.offsetWidth;
+    }
+    function irPara(i){
+      atual = Math.max(0, Math.min(i, DEPOIMENTOS.length-1));
+      track.scrollTo({ left: atual * larguraItem(), behavior: 'smooth' });
+      marcar();
+    }
+    function marcar(){
+      dots.querySelectorAll('.car__dot').forEach(function(d,i){ d.classList.toggle('on', i===atual); });
+    }
+    document.getElementById('dep-prev').onclick = function(){ irPara(atual-1); };
+    document.getElementById('dep-next').onclick = function(){ irPara(atual+1); };
+
+    // acompanha o arrasto/swipe do usuário
+    var t;
+    track.addEventListener('scroll', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        atual = Math.round(track.scrollLeft / larguraItem());
+        marcar();
+      }, 90);
+    }, {passive:true});
+  })();
+  </script>
+
+  <!-- ===== Velocímetro ===== -->
+  <div class="gauge" id="gauge" aria-hidden="true">
+    <svg viewBox="0 0 200 168">
+      <path d="M30 148 A80 80 0 1 1 170 148" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="10" stroke-linecap="round"/>
+      <path id="gauge-arc" d="M30 148 A80 80 0 1 1 170 148" fill="none" stroke="url(#gg)" stroke-width="10" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="gg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#23A455"/><stop offset="1" stop-color="#F5B23E"/>
+        </linearGradient>
+      </defs>
+      <text id="gauge-num" class="gauge__val" x="100" y="112" text-anchor="middle" font-size="34">0</text>
+      <text class="gauge__unit" x="100" y="132" text-anchor="middle" font-size="11">MWh</text>
+      <text class="gauge__label" x="100" y="160" text-anchor="middle" font-size="8">ENERGIA LIMPA GERADA</text>
+    </svg>
+  </div>
+
+  <!-- ===== Lógica do velocímetro ===== -->
+  <script>
+  (function(){
+    var g = document.getElementById('gauge'),
+        arc = document.getElementById('gauge-arc'),
+        num = document.getElementById('gauge-num');
+    if (!g || !arc) return;
+
+    var MAX = 180000000;          // 180 milhões
+    var len = arc.getTotalLength();
+    arc.style.strokeDasharray = len;
+    arc.style.strokeDashoffset = len;
+
+    var mostrado = 0, alvo = 0;
+    var fmt = new Intl.NumberFormat('pt-BR', {maximumFractionDigits:0});
+
+    var hero = document.getElementById('hero');
+    function onScroll(){
+      // progresso DENTRO do hero (0 no topo, 1 quando o video termina)
+      var top = hero.offsetTop, alt = hero.offsetHeight - innerHeight;
+      var p = alt > 0 ? (window.scrollY - top) / alt : 0;
+      p = Math.min(Math.max(p, 0), 1);
+      alvo = p;
+      // so aparece durante o hero: some ao passar dele (e antes de comecar a rolar)
+      var dentro = window.scrollY > innerHeight * 0.15 && p < 0.999;
+      g.classList.toggle('on', dentro);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    onScroll();
+
+    (function loop(){
+      mostrado += (alvo - mostrado) * 0.08;         // suaviza o ponteiro
+      arc.style.strokeDashoffset = len * (1 - mostrado);
+      var v = Math.round(mostrado * MAX);
+      // encolhe a fonte quando o numero fica grande
+      num.setAttribute('font-size', v >= 100000000 ? 20 : v >= 1000000 ? 24 : 34);
+      num.textContent = v >= 1000000 ? (v/1000000).toFixed(1).replace('.',',') + ' mi' : fmt.format(v);
+      requestAnimationFrame(loop);
+    })();
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var f = document.getElementById('form-contato'),
+        ok = document.getElementById('form-ok');
+    if (!f) return;
+    var btn = f.querySelector('button[type=submit]');
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      btn.disabled = true; btn.textContent = 'Enviando…';
+      var dados = new URLSearchParams(new FormData(f)).toString();
+      fetch('/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: dados
+      }).then(function(r){
+        if (!r.ok) throw new Error('falha');
+        f.style.display = 'none';
+        ok.classList.add('show');
+        ok.scrollIntoView({behavior:'smooth', block:'center'});
+      }).catch(function(){
+        btn.disabled = false; btn.textContent = 'Enviar mensagem';
+        alert('Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.');
+      });
+    });
+  })();
+  </script>
+
+  <!-- Google Ads: rastreamento de conversao (clique no WhatsApp) -->
+  <script>
+  (function(){
+    document.addEventListener('click', function(ev){
+      var el = ev.target.closest('.js-wa, .js-wa-split, #wa-float');
+      if (!el) return;
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {'send_to': 'AW-18142105077/dZ0sCKv0ktwcEPWb6spD'});
+      }
+    }, true);
+  })();
+  </script>
 </body>
 </html>

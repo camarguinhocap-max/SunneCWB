@@ -1,0 +1,11 @@
+# Links curtos (o endereço bonito continua na barra do navegador)
+/junior        /cartao-junior.html            200
+/josmair       /cartao.html                   200
+/camarguinho   /cartao.html                   200
+/economizar    /energia-por-assinatura.html   200
+/assinatura    /energia-por-assinatura.html   200
+/assessor      /assessor.html                 200
+/blog          /blog.html                     200
+
+# Erros caem na página 404 personalizada
+/*             /404.html                      404
