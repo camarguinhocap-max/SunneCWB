@@ -14,7 +14,7 @@ import { getStore } from "@netlify/blobs";
 
 const NUMBERS = [
   "5541984738591", // Junior
-  "5541987757984", // Josmair
+  "5541999594737", // Josmair
 ];
 
 export default async () => {
