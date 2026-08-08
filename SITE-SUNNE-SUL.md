@@ -104,14 +104,24 @@ Base em **Curitiba/PR**, mas atende **todo o Paraná** e, quando possível, esta
 
 ## 4. CONTATOS
 
-| Pessoa | WhatsApp | Onde aparece |
+| Pessoa/uso | WhatsApp | Onde aparece |
 |--------|----------|--------------|
-| **Josmair** (Camarguinho) | **5541998308282** | apenas no cartão dele (cartao.html) |
-| **Junior Mulbauer** | **5541984738591** | todos os botões de WhatsApp do site + cartao-junior.html |
+| **Josmair** (Camarguinho) | **5541998308282** | apenas no cartão dele (cartao.html) e no preset do qr.html |
+| **Junior Mulbauer** | **5541984738591** | todos os botões de WhatsApp do site (fixo, rodapé, `.js-wa`) + cartao-junior.html |
+| **CRM** | **5541999594737** | metade do rodízio dos botões "Quero economizar"/"Quero minha simulação real" em energia-por-assinatura.html (função `next-whatsapp`) |
 | E-mail | **contato@sunnesul.com.br** | formulário, rodapés |
 
 - Nome completo: Josmair Franco de Camargo Filho. Apelido usado no cartão/vCard: "Josmair".
 - Formato do link: `https://wa.me/NUMERO?text=MENSAGEM` (visível no HTML, não só via JS).
+- **Número banido: 5541987757984.** Não é de ninguém confirmado — provavelmente erro de digitação
+  antigo. Apareceu por engano em 4 lugares (cartao.html, qr.html e nos dois arquivos da function
+  next-whatsapp) e corrigido em 04/08/2026. Se esse número aparecer de novo em algum arquivo, é bug.
+- **Rodízio "Quero economizar" (next-whatsapp):** alterna Junior/CRM a cada clique, contador guardado
+  no Netlify Blobs. Existem DOIS arquivos da mesma function — `netlify/functions/next-whatsapp.mjs`
+  (o correto, ativo) e `netlify/functions/next-whatsapp.js` (duplicata antiga que deveria ter sido
+  apagada em commit anterior e voltou por engano num merge; **apagar manualmente pelo Explorer**).
+  Também existe um `next-whatsapp.mjs` solto na RAIZ do site (fora de netlify/functions/) que é lixo
+  de uma edição antiga e não faz nada — **apagar também**.
 
 ---
 
@@ -203,7 +213,8 @@ Toda página precisa ter:
 ## 9. PENDÊNCIAS E BACKLOG
 
 ### Pendências do dono (Camarguinho)
-- [ ] **Fazer o push do rastreamento de conversão pro GitHub** (ver nota abaixo)
+- [ ] **Apagar 2 arquivos pelo Explorer** (o sandbox não consegue apagar arquivo neste mount):
+  `netlify/functions/next-whatsapp.js` (duplicata) e `next-whatsapp.mjs` da raiz do site (lixo)
 - [ ] Google Meu Negócio — após formalizar a empresa (~2 meses)
 - [ ] Coletar depoimentos reais dos primeiros clientes (com autorização) → preencher carrossel
 - [ ] Decidir rótulo/número do velocímetro (hoje decorativo: 180 mi MWh)

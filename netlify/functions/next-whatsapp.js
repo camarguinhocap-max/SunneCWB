@@ -1,9 +1,15 @@
-// Rodízio exato de WhatsApp entre Junior e Josmair para os botões
+// ATENCAO: este arquivo esta DUPLICADO com next-whatsapp.mjs (mesmo nome de
+// funcao, extensoes diferentes). Ele deveria ter sido apagado — precisa
+// deletar manualmente pelo Explorer do Windows (o sandbox nao consegue
+// apagar arquivos neste mount). Ate isso ser feito, mantendo o numero
+// igual ao do .mjs pra nao haver risco de foto de rodizio divergente.
+//
+// Rodízio exato de WhatsApp entre Junior e o CRM para os botões
 // "Quero economizar" da página energia-por-assinatura.html.
 //
 // Guarda um contador no Netlify Blobs. A cada chamada:
 //  - lê o contador atual
-//  - decide o número (par -> Junior, ímpar -> Josmair)
+//  - decide o número (par -> Junior, ímpar -> CRM)
 //  - incrementa e salva
 //
 // Se o Blobs falhar por qualquer motivo (ex.: indisponibilidade),
@@ -14,7 +20,7 @@ const { getStore, connectLambda } = require("@netlify/blobs");
 
 const NUMBERS = [
   "5541984738591", // Junior
-  "5541998308282", // Josmair
+  "5541999594737", // CRM
 ];
 
 exports.handler = async (event) => {
