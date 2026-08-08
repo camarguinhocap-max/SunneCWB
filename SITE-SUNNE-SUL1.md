@@ -107,7 +107,7 @@ reforçar com concorrência otimista.
 
 **Testado e confirmado funcionando em 2026-07-28:** 8 chamadas seguidas em
 `https://sunnesul.com.br/.netlify/functions/next-whatsapp` alternaram corretamente entre
-`5541984738591` (Junior) e `5541987757984` (Josmair), incrementando o contador a cada clique.
+`5541984738591` (Junior) e `5541999594737` (Josmair), incrementando o contador a cada clique.
 
 **Pendência:** subir a correção do bug do pop-up em `energia-por-assinatura.html` — o clique
 nos botões `js-wa-split` usava `window.open()` dentro do `.then()`/`.catch()` do fetch, o que
@@ -139,8 +139,8 @@ suspeitar do Bot Fight Mode primeiro antes de investigar o código.**
 
 ## 0.4 NOVIDADE — Troca do número do Josmair
 
-WhatsApp/telefone do Josmair trocou de **5541998308282** para **5541987757984**
-(41 98775-7984). Atualizado em: `cartao.html` (campos `whatsapp` e `telefone` do DADOS),
+WhatsApp/telefone do Josmair trocou de **5541998308282** para **5541999594737**
+(41 99959-4737). Atualizado em: `cartao.html` (campos `whatsapp` e `telefone` do DADOS),
 `qr.html` (link do gerador de QR) e `netlify/functions/next-whatsapp.mjs` (rodízio de
 WhatsApp da página `energia-por-assinatura.html`). O número antigo **não aparece mais em
 nenhum lugar do código** — conferido por busca no repositório inteiro.
@@ -286,7 +286,7 @@ Base em **Curitiba/PR**, mas atende **todo o Paraná** e, quando possível, esta
 
 | Pessoa | WhatsApp | Onde aparece |
 |--------|----------|--------------|
-| **Josmair** (Camarguinho) | **5541987757984** | apenas no cartão dele (cartao.html) |
+| **Josmair** (Camarguinho) | **5541999594737** | apenas no cartão dele (cartao.html) |
 | **Junior Mulbauer** | **5541984738591** | todos os botões de WhatsApp do site + cartao-junior.html |
 | E-mail | **contato@sunnesul.com.br** | formulário, rodapés |
 
