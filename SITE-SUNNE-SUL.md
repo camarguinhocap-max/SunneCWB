@@ -5,7 +5,7 @@
 > Se algo mudar no site e não for atualizado aqui, este documento perde o valor.
 > Ao iniciar uma nova conversa para mexer no site, entregue este arquivo primeiro.
 
-Última atualização: 2026-08-12
+Última atualização: 2026-08-12 (2)
 
 ---
 
@@ -138,10 +138,22 @@ qualificados baixo — motivou os ajustes abaixo, feitos direto nas duas campanh
 
 | Pessoa/uso | WhatsApp | Onde aparece |
 |--------|----------|--------------|
+| **CRM** | **5541999594737** | **número principal — todos os botões de WhatsApp do site** (fixo, rodapé, header, `.js-wa`, botão flutuante) desde 12/08/2026 |
 | **Josmair** (Camarguinho) | **5541998308282** | apenas no cartão dele (cartao.html) e no preset do qr.html |
-| **Junior Mulbauer** | **5541984738591** | todos os botões de WhatsApp do site (fixo, rodapé, `.js-wa`) + cartao-junior.html |
-| **CRM** | **5541999594737** | metade do rodízio dos botões "Quero economizar"/"Quero minha simulação real" em energia-por-assinatura.html (função `next-whatsapp`) |
+| **Junior Mulbauer** | **5541984738591** | cartao-junior.html (cartão pessoal) + segunda opção no rodízio "Quero economizar"/"Quero minha simulação real" em energia-por-assinatura.html |
 | E-mail | **contato@sunnesul.com.br** | formulário, rodapés |
+
+- **12/08/2026 — troca de número principal:** o número principal de todos os botões de
+  WhatsApp do site foi trocado de Junior (5541984738591) para **CRM (5541999594737)**, a
+  pedido do Camarguinho. Afeta: index, energia-por-assinatura, assessor, blog, quem-somos,
+  como-reduzir-conta-de-luz, energia-por-assinatura-vale-a-pena,
+  mercado-livre-de-energia-residencial-2028 (constante `WHATSAPP`/`NUM`, JSON-LD telephone,
+  hrefs estáticos e botão flutuante). O rodízio da função `next-whatsapp` (usado só nos
+  botões "Quero economizar"/"Quero minha simulação real" de energia-por-assinatura.html)
+  também foi invertido: agora começa pelo **CRM** e alterna com o Junior — e o fallback em
+  caso de falha no Netlify Blobs também virou o CRM. Cartões pessoais (cartao.html,
+  cartao-junior.html) e os presets do qr.html **não foram alterados** — continuam com o
+  número de cada pessoa, de propósito.
 
 - Nome completo: Josmair Franco de Camargo Filho. Apelido usado no cartão/vCard: "Josmair".
 - Formato do link: `https://wa.me/NUMERO?text=MENSAGEM` (visível no HTML, não só via JS).

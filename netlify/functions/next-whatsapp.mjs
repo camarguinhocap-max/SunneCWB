@@ -1,20 +1,20 @@
-// Rodízio exato de WhatsApp entre Junior e o CRM para os botões
+// Rodízio exato de WhatsApp entre o CRM e o Junior para os botões
 // "Quero economizar" da página energia-por-assinatura.html.
 //
 // Guarda um contador no Netlify Blobs. A cada chamada:
 //  - lê o contador atual (consistência forte, pra não ler valor desatualizado)
-//  - decide o número (par -> Junior, ímpar -> CRM)
+//  - decide o número (par -> CRM, ímpar -> Junior)
 //  - incrementa e salva
 //
 // Se o Blobs falhar por qualquer motivo (ex.: indisponibilidade),
-// devolve sempre o número do Junior — mesmo comportamento que o site
-// já tinha antes desta automação, então nada quebra.
+// devolve sempre o número do CRM — mesmo comportamento do resto do site,
+// que agora tem o CRM como número principal em todos os botões.
 
 import { getStore } from "@netlify/blobs";
 
 const NUMBERS = [
-  "5541984738591", // Junior
   "5541999594737", // CRM
+  "5541984738591", // Junior
 ];
 
 export default async () => {
