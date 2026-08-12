@@ -5,7 +5,7 @@
 > Se algo mudar no site e não for atualizado aqui, este documento perde o valor.
 > Ao iniciar uma nova conversa para mexer no site, entregue este arquivo primeiro.
 
-Última atualização: 2026-08-04
+Última atualização: 2026-08-12
 
 ---
 
@@ -25,8 +25,10 @@ Junior (nunca colocar link de checkout/Kiwify no site).
 **Base legal do serviço:** ANEEL, Lei 14.300/2022, Resolução Normativa 1.059/2023.
 
 ### Área de atendimento
-Base em **Curitiba/PR**, mas atende **todo o Paraná** e, quando possível, estados vizinhos:
-**Santa Catarina, São Paulo e Mato Grosso do Sul**. Curitiba é só a base, não o limite.
+Base em **Curitiba/PR**, mas o negócio atende o **Brasil inteiro**, com exceção de 9 estados
+onde **não há atendimento**: **Roraima, Distrito Federal, Amapá, Tocantins, Sergipe, Rondônia,
+Mato Grosso do Sul, Acre e Amazonas**. Curitiba é só a base, não o limite. Essa é também a
+segmentação geográfica usada nas campanhas do Google Ads (ver seção 2).
 
 ---
 
@@ -81,6 +83,36 @@ Base em **Curitiba/PR**, mas atende **todo o Paraná** e, quando possível, esta
   `.js-wa-split` e `#wa-float` e dispara `gtag('event','conversion',{'send_to':
   'AW-18142105077/dZ0sCKv0ktwcEPWb6spD'})`. Não adicionado em cartao.html/cartao-junior.html
   (cartões de visita pessoais, fora do escopo das campanhas).
+
+#### Campanhas Google Ads — ajustes de 12/08/2026 (pós primeiro flight de teste)
+Primeiro flight (28/jul a 7/ago/2026, R$100 total / ~10 dias) rodou com 2 campanhas: **Clientes
+- Energia por Assinatura - Curitiba** (R$60 total) e **Assessor - Recrutamento - Curitiba**
+(R$40 total). Resultado: 10 conversões de clique no WhatsApp, CTR alto, mas volume de leads
+qualificados baixo — motivou os ajustes abaixo, feitos direto nas duas campanhas:
+
+- **Segmentação geográfica:** trocada de "Paraná (estado)" para **"Brasil (país)" com 9
+  estados excluídos** (Roraima, Distrito Federal, Amapá, Tocantins, Sergipe, Rondônia, Mato
+  Grosso do Sul, Acre, Amazonas) — mesma regra da seção 1. Opção de local trocada de
+  "Presença ou interesse" para **"Presença"** (só gente fisicamente nesses locais, não quem
+  só demonstrou interesse) para cortar cliques de fora da área de atendimento.
+- **Match type:** as palavras-chave `energia solar por assinatura` (campanha Clientes) e
+  `energia por assinatura` (campanha Assessor) — que são literalmente o produto/programa —
+  foram trocadas de correspondência **ampla** para **frase** (`"energia solar por
+  assinatura"` / `"energia por assinatura"`), pra manter o termo mas cortar tráfego
+  irrelevante que a correspondência ampla trazia. **Nunca pausar essas duas palavras-chave.**
+- **Anúncio da campanha Assessor reposicionado como "renda extra":** títulos e descrições do
+  RSA atualizados para deixar claro que é renda extra pra quem já trabalha/já vende algo
+  (especialmente vendedores com carteira própria ou comércio físico), que o produto vendido é
+  energia por assinatura, e que pode virar renda principal conforme a performance. Mesma
+  lógica replicada na página `/assessor` (hero, nova seção "Pra quem é" e 2 novos itens de
+  FAQ sobre não precisar largar o emprego e o que o assessor realmente vende).
+- **Remarketing:** criado o segmento combinado **"Remarketing - Visitou e não converteu"** no
+  Gerenciador de públicos-alvo do Google Ads (Ferramentas → Biblioteca compartilhada) —
+  inclui "Todos os visitantes (Google Ads)" e exclui "Todos os usuários que fizeram uma
+  conversão". Pronto pra usar num próximo flight ou campanha de remarketing.
+- **Próximo flight:** 10 dias, R$10/dia (R$6 Clientes + R$4 Assessor — mesma proporção do
+  orçamento total já configurado nas campanhas). Preparado mas **datas ainda não ativadas**
+  aguardando confirmação final do Camarguinho.
 
 ---
 
@@ -215,11 +247,16 @@ Toda página precisa ter:
 ### Pendências do dono (Camarguinho)
 - [ ] **Apagar 2 arquivos pelo Explorer** (o sandbox não consegue apagar arquivo neste mount):
   `netlify/functions/next-whatsapp.js` (duplicata) e `next-whatsapp.mjs` da raiz do site (lixo)
+- [ ] **Confirmar data de início do próximo flight do Google Ads** (10 dias, R$10/dia — já
+  preparado, só falta a data pra ativar)
 - [ ] Google Meu Negócio — após formalizar a empresa (~2 meses)
 - [ ] Coletar depoimentos reais dos primeiros clientes (com autorização) → preencher carrossel
 - [ ] Decidir rótulo/número do velocímetro (hoje decorativo: 180 mi MWh)
 
 ### Backlog de melhorias (a fazer no site)
+- [ ] Revisar meta tags de geo/coverage e textos de "Paraná e região Sul" nas demais páginas
+  (index, energia-por-assinatura, etc.) pra refletir a área de atendimento nova (Brasil
+  exceto os 9 estados da seção 1) — só a assessor.html foi atualizada até agora
 - [ ] QR code dentro dos próprios cartões (mostrar na tela e a pessoa escaneia)
 - [ ] Mais artigos no blog (busca orgânica)
 - [ ] Páginas por cidade (Londrina, Maringá, Joinville) para SEO regional
