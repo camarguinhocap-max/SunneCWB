@@ -154,7 +154,7 @@
           <label class="drop" id="drop" for="s-file">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M20 16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
             <b>Toque para anexar sua conta</b>
-            <small>Foto ou PDF · a fatura mais recente</small>
+            <small>Foto ou PDF · a fatura mais recente · pode ser só a 1ª página (até 7 MB)</small>
             <input id="s-file" name="conta-de-luz" type="file" accept="image/*,application/pdf" required>
           </label>
           <div class="filename" id="filename"></div>
@@ -184,9 +184,19 @@
   var fileInput = document.getElementById('s-file');
   var filename = document.getElementById('filename');
   var dropText = document.querySelector('#drop b');
+  var MAX_BYTES = 7 * 1024 * 1024; // 7 MB (limite do Netlify e 8 MB, com margem)
   fileInput.addEventListener('change', function(){
     if (fileInput.files && fileInput.files[0]) {
-      filename.textContent = '✓ ' + fileInput.files[0].name;
+      var f = fileInput.files[0];
+      if (f.size > MAX_BYTES) {
+        filename.style.color = '#F5B23E';
+        filename.textContent = '⚠ Arquivo muito grande (' + (f.size/1048576).toFixed(1) + ' MB). Envie uma foto ou PDF de até 7 MB — pode ser só a 1ª página da conta.';
+        fileInput.value = '';
+        dropText.textContent = 'Toque para anexar sua conta';
+        return;
+      }
+      filename.style.color = '';
+      filename.textContent = '✓ ' + f.name;
       dropText.textContent = 'Arquivo anexado — toque para trocar';
     }
   });
@@ -200,6 +210,11 @@
   var form = document.getElementById('form-sim');
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    var f = fileInput.files[0];
+    if (f && f.size > MAX_BYTES) {
+      alert('O arquivo passa de 7 MB e não pode ser enviado. Envie uma foto ou PDF menor — pode ser só a 1ª página da conta.');
+      return;
+    }
     var btn = document.getElementById('submit-btn');
     btn.disabled = true;
     btn.textContent = 'Enviando...';
