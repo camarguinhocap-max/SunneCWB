@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18142105077"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18142105077');
+  gtag('config', 'G-FJ7CF6958Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Sunne Sul — Assessoria de Energia">
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<meta name="coverage" content="Paraná, Santa Catarina, São Paulo, Mato Grosso do Sul">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunne Sul">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://sunnesul.com.br/hero-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Simulação grátis de economia na conta de luz | Sunne Sul</title>
+<meta name="description" content="Envie sua conta de luz e receba uma simulação gratuita de quanto você pode economizar com energia por assinatura. Sem compromisso.">
+<link rel="canonical" href="https://sunnesul.com.br/simulacao">
+<meta property="og:url" content="https://sunnesul.com.br/simulacao">
+<meta property="og:title" content="Simulação grátis de economia na conta de luz">
+<meta property="og:description" content="Envie sua conta de luz e receba uma simulação gratuita de quanto você pode economizar. Sem compromisso.">
+<meta name="twitter:title" content="Simulação grátis de economia na conta de luz">
+<meta name="twitter:description" content="Envie sua conta de luz e receba uma simulação gratuita de quanto você pode economizar. Sem compromisso.">
+<style>
+  :root{--stage:#0A0A0B;--stage-2:#111013;--text:#F6F2EA;--muted:#9A948B;--brand:#23A455;
+    --brand-ink:#04120A;--brand-soft:rgba(35,164,85,.22);--gold:#F5B23E;
+    --font-display:"Fraunces",Georgia,serif;--font-ui:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --sab:env(safe-area-inset-bottom,0px);--sal:env(safe-area-inset-left,0px);--sar:env(safe-area-inset-right,0px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--stage);color:var(--text);font-family:var(--font-ui);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+  ::selection{background:var(--brand);color:var(--brand-ink)}
+  a{color:inherit}
+  .header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;
+    padding:14px calc(clamp(20px,5vw,48px) + var(--sar)) 14px calc(clamp(20px,5vw,48px) + var(--sal));
+    background:rgba(10,10,11,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.06)}
+  .header img{height:28px;width:auto;display:block}
+  .header nav{display:flex;gap:18px;align-items:center}
+  .header nav a{color:var(--muted);text-decoration:none;font-size:.94rem}
+  .header nav a:hover{color:var(--text)}
+  .wrap{max-width:620px;margin:0 auto;padding:clamp(36px,7vh,64px) calc(clamp(24px,6vw,40px) + var(--sar)) 60px calc(clamp(24px,6vw,40px) + var(--sal))}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--brand);font-weight:600}
+  h1{margin-top:14px;font-family:var(--font-display);font-weight:300;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.1;letter-spacing:-.015em}
+  .sub{margin-top:16px;color:var(--muted);font-size:1.08rem;line-height:1.6}
+  .steps{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
+  .steps span{display:inline-flex;align-items:center;gap:7px}
+  .steps span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  form{margin-top:34px}
+  .field{margin-top:18px}
+  .field label{display:block;font-size:.9rem;color:var(--text);font-weight:600;margin-bottom:7px}
+  .field input[type=text],.field input[type=tel],.field input[type=email]{
+    width:100%;height:52px;padding:0 16px;border-radius:12px;background:var(--stage-2);
+    border:1px solid rgba(255,255,255,.12);color:var(--text);font-family:inherit;font-size:1rem;outline:none;
+    transition:border-color .15s var(--ease)}
+  .field input:focus{border-color:var(--brand)}
+  .drop{margin-top:8px;border:1.5px dashed rgba(35,164,85,.5);border-radius:14px;background:rgba(35,164,85,.05);
+    padding:26px 20px;text-align:center;cursor:pointer;transition:background .15s var(--ease),border-color .15s var(--ease)}
+  .drop:hover{background:rgba(35,164,85,.09);border-color:var(--brand)}
+  .drop svg{width:32px;height:32px;stroke:var(--brand);margin-bottom:10px}
+  .drop b{color:var(--text);display:block;font-size:1rem}
+  .drop small{color:var(--muted);display:block;margin-top:5px;font-size:.85rem}
+  .drop input[type=file]{display:none}
+  .filename{margin-top:10px;color:var(--brand);font-size:.92rem;font-weight:600;word-break:break-all}
+  .btn-submit{margin-top:26px;width:100%;height:56px;border:none;border-radius:999px;background:var(--brand);
+    color:var(--brand-ink);font-family:inherit;font-weight:600;font-size:1.05rem;cursor:pointer;
+    box-shadow:0 12px 30px var(--brand-soft);transition:transform .18s var(--ease),opacity .2s}
+  .btn-submit:hover{transform:translateY(-2px)}
+  .btn-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
+  .fine{margin-top:16px;color:rgba(154,148,139,.85);font-size:.82rem;line-height:1.5;text-align:center}
+  .ok{display:none;margin-top:30px;padding:34px 26px;border-radius:20px;text-align:center;
+    background:radial-gradient(120% 120% at 50% 0%,rgba(35,164,85,.15),transparent 62%),var(--stage-2);
+    border:1px solid rgba(35,164,85,.3)}
+  .ok.show{display:block}
+  .ok .check{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:var(--brand);
+    display:flex;align-items:center;justify-content:center}
+  .ok .check svg{width:30px;height:30px;stroke:var(--brand-ink)}
+  .ok h2{font-family:var(--font-display);font-weight:300;font-size:1.7rem}
+  .ok p{margin-top:12px;color:var(--muted)}
+  .ok .wa{margin-top:22px;display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 24px;
+    border-radius:999px;background:var(--brand);color:var(--brand-ink);font-weight:600;text-decoration:none}
+  .footer{padding:30px calc(clamp(24px,6vw,48px) + var(--sar)) calc(30px + var(--sab));border-top:1px solid rgba(255,255,255,.06);text-align:center}
+  .footer small{color:rgba(154,148,139,.7);font-size:.78rem;line-height:1.6}
+  .footer a{color:var(--muted)}
+</style>
+<!-- Form-espelho OCULTO: o Netlify precisa dele no HTML para detectar os campos (inclusive o arquivo) -->
+<form name="simulacao" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="nome">
+  <input type="tel" name="telefone">
+  <input type="email" name="email">
+  <input type="file" name="conta-de-luz">
+</form>
+</head>
+<body>
+  <header class="header">
+    <a href="/"><img src="Sunne-nova-logo-19.webp" alt="Sunne Sul"></a>
+    <nav>
+      <a href="/energia-por-assinatura">Como funciona</a>
+      <a href="/blog">Artigos</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div id="form-area">
+      <div class="eyebrow">Simulação grátis</div>
+      <h1>Descubra quanto você pode economizar</h1>
+      <p class="sub">Preencha seus dados, anexe uma conta de luz recente e receba uma simulação
+        personalizada de quanto dá pra reduzir na sua conta — sem compromisso.</p>
+      <div class="steps">
+        <span>Preencha os dados</span>
+        <span>Anexe a conta</span>
+        <span>Receba a simulação</span>
+      </div>
+
+      <form class="form" id="form-sim" name="simulacao" method="POST" data-netlify="true"
+            netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="simulacao">
+        <p style="display:none"><label>Não preencha: <input name="bot-field"></label></p>
+
+        <div class="field">
+          <label for="s-nome">Nome completo</label>
+          <input id="s-nome" name="nome" type="text" required autocomplete="name" placeholder="Seu nome completo">
+        </div>
+        <div class="field">
+          <label for="s-tel">Telefone / WhatsApp</label>
+          <input id="s-tel" name="telefone" type="tel" required inputmode="tel" placeholder="(41) 90000-0000" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="s-email">E-mail</label>
+          <input id="s-email" name="email" type="email" required inputmode="email" placeholder="voce@email.com" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label>Conta de luz recente</label>
+          <label class="drop" id="drop" for="s-file">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M20 16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
+            <b>Toque para anexar sua conta</b>
+            <small>Foto ou PDF · a fatura mais recente</small>
+            <input id="s-file" name="conta-de-luz" type="file" accept="image/*,application/pdf" required>
+          </label>
+          <div class="filename" id="filename"></div>
+        </div>
+
+        <button class="btn-submit" id="submit-btn" type="submit">Receber minha simulação grátis</button>
+        <p class="fine">Seus dados são usados apenas para elaborar e enviar a sua simulação.
+          Ao enviar, você concorda em ser contatado sobre a energia por assinatura.</p>
+      </form>
+    </div>
+
+    <div class="ok" id="ok-box">
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h2>Recebido!</h2>
+      <p>Sua conta chegou até nós. Em breve você recebe sua simulação personalizada no WhatsApp
+        e no e-mail informados. Fique de olho!</p>
+      <a class="wa" id="wa-link" href="#" target="_blank" rel="noopener">Falar agora no WhatsApp</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <small>Sunne Sul · Assessoria de energia — Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. · CNPJ 68.200.157/0001-02 · SunneSul é operado por um Assessor de Energia credenciado autônomo. Não é o site oficial da Sunne, cuja página oficial é <a href="https://sunne.com.br" target="_blank" rel="noopener">sunne.com.br</a>.</small>
+  </footer>
+
+<script>
+  // Mostrar nome do arquivo escolhido
+  var fileInput = document.getElementById('s-file');
+  var filename = document.getElementById('filename');
+  var dropText = document.querySelector('#drop b');
+  fileInput.addEventListener('change', function(){
+    if (fileInput.files && fileInput.files[0]) {
+      filename.textContent = '✓ ' + fileInput.files[0].name;
+      dropText.textContent = 'Arquivo anexado — toque para trocar';
+    }
+  });
+
+  // WhatsApp de contato
+  var WHATSAPP = "5541999594737";
+  var MSG = "Olá! Acabei de enviar minha conta de luz pelo site para simulação.";
+  document.getElementById('wa-link').href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG);
+
+  // Envio via fetch (multipart) para o Netlify, sem sair da página
+  var form = document.getElementById('form-sim');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    var data = new FormData(form);
+    fetch('/', { method: 'POST', body: data })
+      .then(function(){
+        document.getElementById('form-area').style.display = 'none';
+        document.getElementById('ok-box').classList.add('show');
+        window.scrollTo({top:0, behavior:'smooth'});
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {'send_to': 'AW-18142105077/dZ0sCKv0ktwcEPWb6spD'});
+        }
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Receber minha simulação grátis';
+        alert('Ops, algo deu errado no envio. Tente novamente ou fale conosco no WhatsApp.');
+      });
+  });
+</script>
+</body>
+</html>

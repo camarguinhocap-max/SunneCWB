@@ -8,4 +8,5 @@
 /blog          /blog.html                     200
 
 # Erros caem na página 404 personalizada
+/simular   /simulacao   301
 /*             /404.html                      404
