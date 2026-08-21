@@ -34,14 +34,14 @@
 <meta property="og:url" content="https://sunnesul.com.br/energia-por-assinatura">
 <meta property="og:title" content="Energia por Assinatura no Paraná — Até 20% de Desconto na Conta de Luz">
 <meta property="og:description" content="Como funciona a energia por assinatura no Paraná e região Sul: até 20% de desconto na fatura, energia 100% renovável, sem obras e sem investimento. Tire suas dúvidas.">
-<meta property="og:image" content="https://sunnesul.com.br/hero-poster.jpg">
-<meta property="og:image:width" content="1920">
-<meta property="og:image:height" content="1080">
-<meta property="og:image:alt" content="Fazenda solar ao amanhecer — energia limpa Sunne">
+<meta property="og:image" content="https://sunnesul.com.br/simulador-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Simulador de economia na conta de luz — Sunne Sul">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Energia por Assinatura no Paraná — Até 20% de Desconto na Conta de Luz">
 <meta name="twitter:description" content="Como funciona a energia por assinatura no Paraná e região Sul: até 20% de desconto na fatura, energia 100% renovável, sem obras e sem investimento. Tire suas dúvidas.">
-<meta name="twitter:image" content="https://sunnesul.com.br/hero-poster.jpg">
+<meta name="twitter:image" content="https://sunnesul.com.br/simulador-preview.jpg">
 
 <meta name="theme-color" content="#0A0A0B">
 
@@ -388,6 +388,17 @@
     .sim__box{margin-top:40px;max-width:560px;padding:28px;border-radius:20px;
       background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09)}
     .sim__label{display:block;font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+    .sim__fases{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .sim__fase{padding:11px 6px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.14);
+      text-align:center;cursor:pointer;transition:.15s;color:var(--muted);font-size:.9rem;user-select:none}
+    .sim__fase b{display:block;color:var(--text);font-size:.96rem}
+    .sim__fase small{font-size:.74rem;opacity:.75}
+    .sim__fase.on{background:rgba(35,164,85,.12);border-color:var(--brand);color:var(--text)}
+    .sim__fase.on b{color:var(--brand)}
+    .sim__min{display:none;margin-top:20px;padding:18px;border-radius:14px;background:rgba(245,178,62,.08);
+      border:1px solid rgba(245,178,62,.32);color:var(--text);font-size:.95rem;line-height:1.55}
+    .sim__min.show{display:block}
+    .sim__out.hide{display:none}
     .sim__field{margin-top:12px;display:flex;align-items:center;gap:10px;padding:0 16px;height:64px;
       border-radius:14px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
     .sim__field:focus-within{border-color:var(--brand)}
@@ -415,7 +426,14 @@
       </p>
 
       <div class="sim__box">
-        <label class="sim__label" for="sim-valor">Sua conta de luz por mês</label>
+        <label class="sim__label">Tipo de ligação</label>
+        <div class="sim__fases" id="sim-fases">
+          <div class="sim__fase on" data-desc="30" data-min="130"><b>Monofásico</b><small>desc. ~30 kWh</small></div>
+          <div class="sim__fase" data-desc="50" data-min="150"><b>Bifásico</b><small>desc. ~50 kWh</small></div>
+          <div class="sim__fase" data-desc="100" data-min="200"><b>Trifásico</b><small>desc. ~100 kWh</small></div>
+        </div>
+
+        <label class="sim__label" for="sim-valor" style="margin-top:22px">Sua conta de luz por mês</label>
         <div class="sim__field">
           <span>R$</span>
           <input id="sim-valor" type="number" inputmode="decimal" min="0" step="10" value="450" aria-describedby="sim-nota">
@@ -425,7 +443,7 @@
                aria-label="Percentual de desconto estimado">
         <div class="sim__hint">Desconto considerado: <b id="sim-pct">15%</b> (a faixa usual vai de 10% a 20%)</div>
 
-        <div class="sim__out">
+        <div class="sim__out" id="sim-out">
           <div class="sim__cell">
             <b id="sim-mes">R$ 67,50</b>
             <small>de economia por mês · CNPJ 68.200.157/0001-02 · SunneSul é operado por um Assessor de Energia credenciado autônomo. Não é o site oficial da Sunne, cuja página oficial é sunne.com.br.</small>
@@ -436,9 +454,17 @@
           </div>
         </div>
 
+        <div class="sim__min" id="sim-min">
+          Para esse valor de conta, não conseguimos gerar uma estimativa automática confiável.
+          <b>Faça uma simulação real</b>: toque em <b>Simular grátis</b> ou fale no WhatsApp para
+          calcularmos com base na sua conta de verdade.
+        </div>
+
         <p class="sim__note" id="sim-nota">
-          Simulação apenas informativa. O desconto real depende da análise do seu perfil de
-          consumo, da disponibilidade de usina na sua região e das condições em contrato.
+          <b>Estimativa aproximada</b>, calculada com a tarifa da COPEL (Paraná). Se a sua distribuidora
+          for outra, o valor muda. O desconto real depende do seu perfil de consumo, da disponibilidade de
+          usina na região e das condições em contrato — por isso, <b>faça a simulação real</b> pelo botão
+          Simular grátis ou pelo WhatsApp.
         </p>
       </div>
 
@@ -449,17 +475,38 @@
   </section>
   <script>
   (function(){
+    var TARIFA = 0.6726; // R$/kWh — COPEL (PR), tarifa padrao do simulador
     var v=document.getElementById('sim-valor'), d=document.getElementById('sim-desc'),
         p=document.getElementById('sim-pct'), m=document.getElementById('sim-mes'), a=document.getElementById('sim-ano');
+    var out=document.getElementById('sim-out'), min=document.getElementById('sim-min');
+    var fases=document.querySelectorAll('.sim__fase');
     var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+    var descKwh=30, contaMin=130; // padrao: monofasico
     function calc(){
       var valor=parseFloat(v.value)||0, pct=parseInt(d.value,10);
       if(valor<0) valor=0;
-      var mes=valor*pct/100;
       p.textContent=pct+'%';
+      if(valor < contaMin){
+        out.classList.add('hide'); min.classList.add('show');
+        return;
+      }
+      out.classList.remove('hide'); min.classList.remove('show');
+      // desconta a disponibilidade (em R$) antes de aplicar o percentual
+      var base = valor - (descKwh * TARIFA);
+      if(base < 0) base = 0;
+      var mes = base * pct/100;
       m.textContent=brl.format(mes);
       a.textContent=brl.format(mes*12);
     }
+    fases.forEach(function(f){
+      f.addEventListener('click',function(){
+        fases.forEach(function(x){x.classList.remove('on');});
+        f.classList.add('on');
+        descKwh=parseInt(f.dataset.desc,10);
+        contaMin=parseInt(f.dataset.min,10);
+        calc();
+      });
+    });
     v.addEventListener('input',calc); d.addEventListener('input',calc); calc();
   })();
   </script>
