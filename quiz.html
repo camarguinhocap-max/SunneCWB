@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18142105077"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18142105077');
+  gtag('config', 'G-FJ7CF6958Y');
+</script>
+
+<!-- ============================================================
+     META PIXEL — COLE O SEU ID onde está SEU_PIXEL_ID (2 lugares).
+     Enquanto o ID não for colado, o Pixel fica inativo (não quebra o site).
+     ============================================================ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  var META_PIXEL_ID = 'SEU_PIXEL_ID'; // <<< troque aqui
+  if (META_PIXEL_ID && META_PIXEL_ID !== 'SEU_PIXEL_ID') {
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sunne Sul — Assessoria de Energia">
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<meta name="coverage" content="Brasil">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunne Sul">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://sunnesul.com.br/simulacao-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sunnesul.com.br/simulacao-preview.png">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Descubra seu desconto na conta de luz | Sunne Sul</title>
+<meta name="description" content="Responda 3 perguntas rápidas e descubra se você pode ter desconto na conta de luz com energia por assinatura. Grátis e sem compromisso.">
+<link rel="canonical" href="https://sunnesul.com.br/quiz">
+<meta property="og:url" content="https://sunnesul.com.br/quiz">
+<meta property="og:title" content="Descubra seu desconto na conta de luz">
+<meta property="og:description" content="Responda 3 perguntas rápidas e descubra se você pode ter desconto na conta de luz. Grátis e sem compromisso.">
+<style>
+  :root{--stage:#0A0A0B;--stage-2:#111013;--text:#F6F2EA;--muted:#9A948B;--brand:#23A455;
+    --brand-ink:#04120A;--brand-soft:rgba(35,164,85,.22);--gold:#F5B23E;
+    --font-display:"Fraunces",Georgia,serif;--font-ui:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --sab:env(safe-area-inset-bottom,0px);--sal:env(safe-area-inset-left,0px);--sar:env(safe-area-inset-right,0px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--stage);color:var(--text);font-family:var(--font-ui);line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;
+    background:radial-gradient(120% 90% at 50% -10%,rgba(35,164,85,.10),transparent 60%),var(--stage)}
+  ::selection{background:var(--brand);color:var(--brand-ink)}
+  a{color:inherit}
+
+  .header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:center;
+    padding:14px calc(clamp(20px,5vw,48px) + var(--sar)) 14px calc(clamp(20px,5vw,48px) + var(--sal));
+    background:rgba(10,10,11,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.06)}
+  .header img{height:28px;width:auto;display:block}
+
+  .wrap{max-width:560px;margin:0 auto;padding:clamp(24px,5vh,44px) calc(20px + var(--sar)) calc(40px + var(--sab)) calc(20px + var(--sal))}
+
+  /* barra de progresso */
+  .progress{display:flex;gap:6px;margin-bottom:26px}
+  .progress i{flex:1;height:5px;border-radius:99px;background:rgba(255,255,255,.12);transition:background .3s var(--ease)}
+  .progress i.done{background:var(--brand)}
+
+  .step{display:none;animation:fade .35s var(--ease)}
+  .step.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brand);font-weight:700}
+  h1{margin-top:12px;font-family:var(--font-display);font-weight:300;
+    font-size:clamp(1.7rem,6vw,2.5rem);line-height:1.12;letter-spacing:-.015em}
+  .lead{margin-top:14px;color:var(--muted);font-size:1.05rem}
+
+  .opts{margin-top:26px;display:grid;gap:12px}
+  .opts.cols2{grid-template-columns:1fr 1fr}
+  .opt{display:flex;align-items:center;justify-content:center;text-align:center;gap:8px;
+    min-height:60px;padding:16px 18px;border-radius:15px;background:var(--stage-2);
+    border:1.5px solid rgba(255,255,255,.12);color:var(--text);font-size:1.06rem;font-weight:600;
+    cursor:pointer;transition:transform .12s var(--ease),border-color .15s,background .15s;
+    -webkit-tap-highlight-color:transparent;user-select:none}
+  .opt:hover{border-color:var(--brand)}
+  .opt:active{transform:scale(.98)}
+  .opt.sel{border-color:var(--brand);background:rgba(35,164,85,.12)}
+
+  .back{margin-top:22px;background:none;border:none;color:var(--muted);font-family:inherit;
+    font-size:.95rem;cursor:pointer;padding:8px 4px;display:inline-flex;align-items:center;gap:6px}
+  .back:hover{color:var(--text)}
+
+  /* etapa de resultado */
+  .result-badge{margin-top:24px;padding:26px 22px;border-radius:20px;text-align:center;
+    background:radial-gradient(120% 120% at 50% 0%,rgba(35,164,85,.16),transparent 62%),var(--stage-2);
+    border:1px solid rgba(35,164,85,.3)}
+  .result-badge .ico{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:var(--brand);
+    display:flex;align-items:center;justify-content:center}
+  .result-badge .ico svg{width:30px;height:30px;stroke:var(--brand-ink)}
+  .result-badge h2{font-family:var(--font-display);font-weight:300;font-size:1.55rem;line-height:1.15}
+  .result-badge p{margin-top:10px;color:var(--muted);font-size:1rem}
+  .result-badge b{color:var(--text)}
+
+  /* form */
+  .field{margin-top:16px}
+  .field label{display:block;font-size:.9rem;color:var(--text);font-weight:600;margin-bottom:7px}
+  .field input{width:100%;height:54px;padding:0 16px;border-radius:13px;background:var(--stage-2);
+    border:1.5px solid rgba(255,255,255,.12);color:var(--text);font-family:inherit;font-size:1.05rem;outline:none;
+    transition:border-color .15s}
+  .field input:focus{border-color:var(--brand)}
+  .field .err{display:none;margin-top:6px;color:var(--gold);font-size:.86rem}
+  .field.invalid input{border-color:var(--gold)}
+  .field.invalid .err{display:block}
+
+  .btn-wa{margin-top:24px;width:100%;min-height:58px;border:none;border-radius:999px;background:var(--brand);
+    color:var(--brand-ink);font-family:inherit;font-weight:700;font-size:1.08rem;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+    box-shadow:0 12px 30px var(--brand-soft);transition:transform .18s var(--ease)}
+  .btn-wa:active{transform:scale(.98)}
+  .btn-wa svg{width:22px;height:22px;fill:currentColor}
+
+  .fine{margin-top:16px;color:rgba(154,148,139,.85);font-size:.82rem;line-height:1.5;text-align:center}
+
+  .footer{padding:26px 20px calc(26px + var(--sab));border-top:1px solid rgba(255,255,255,.06);text-align:center;margin-top:20px}
+  .footer small{color:rgba(154,148,139,.7);font-size:.76rem;line-height:1.6}
+  .footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+  <header class="header">
+    <a href="/"><img src="Sunne-nova-logo-19.webp" alt="Sunne Sul"></a>
+  </header>
+
+  <main class="wrap">
+    <div class="progress" id="progress">
+      <i class="done"></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <!-- ETAPA 1 — interesse -->
+    <section class="step on" data-step="1">
+      <div class="eyebrow">Descubra agora</div>
+      <h1>Quer economizar na sua conta de luz?</h1>
+      <p class="lead">Responda 3 perguntas rápidas e veja se você tem direito a desconto com energia por assinatura. É grátis.</p>
+      <div class="opts cols2">
+        <div class="opt" data-next="2">Sim</div>
+        <div class="opt" data-next="2">Com certeza</div>
+      </div>
+    </section>
+
+    <!-- ETAPA 2 — região -->
+    <section class="step" data-step="2">
+      <div class="eyebrow">Passo 1 de 3</div>
+      <h1>Em qual região do Brasil você mora?</h1>
+      <div class="opts" id="regioes"></div>
+      <button class="back" data-back="1">← Voltar</button>
+    </section>
+
+    <!-- ETAPA 3 — estado -->
+    <section class="step" data-step="3">
+      <div class="eyebrow">Passo 2 de 3</div>
+      <h1>Em qual estado você está?</h1>
+      <div class="opts cols2" id="estados"></div>
+      <button class="back" data-back="2">← Voltar</button>
+    </section>
+
+    <!-- ETAPA 4 — distribuidora -->
+    <section class="step" data-step="4">
+      <div class="eyebrow">Passo 3 de 3</div>
+      <h1 id="dist-titulo">Qual dessas aparece na sua conta de luz?</h1>
+      <div class="opts" id="distribuidoras"></div>
+      <button class="back" data-back="3">← Voltar</button>
+    </section>
+
+    <!-- ETAPA 5 — captura -->
+    <section class="step" data-step="5">
+      <div class="result-badge">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h2 id="result-titulo">Boa notícia!</h2>
+        <p id="result-texto"></p>
+      </div>
+
+      <form id="lead-form" novalidate>
+        <div class="field" id="f-nome">
+          <label for="q-nome">Seu nome</label>
+          <input id="q-nome" name="nome" type="text" autocomplete="name" placeholder="Nome completo" required>
+          <div class="err">Digite seu nome.</div>
+        </div>
+        <div class="field" id="f-email">
+          <label for="q-email">Seu e-mail</label>
+          <input id="q-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" required>
+          <div class="err">Digite um e-mail válido.</div>
+        </div>
+
+        <button class="btn-wa" id="btn-wa" type="submit">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6 8.9a5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c2.1.9 2.1.6 2.5.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+          <span id="btn-wa-txt">Falar no WhatsApp</span>
+        </button>
+        <p class="fine">Seus dados são usados apenas para retornar sobre a sua economia. Sem compromisso.</p>
+      </form>
+      <button class="back" data-back="4">← Voltar</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Sunne Sul · Assessoria de energia — Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. · CNPJ 68.200.157/0001-02 · SunneSul é operado por um Assessor de Energia credenciado autônomo. Não é o site oficial da Sunne, cuja página oficial é <a href="https://sunne.com.br" target="_blank" rel="noopener">sunne.com.br</a>.</small>
+  </footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var WHATSAPP = "5541999594737"; // número correto da Sunne Sul
+
+  // Regiões e estados (divisão IBGE)
+  var REGIOES = {
+    "Norte":        ["AC","AM","AP","PA","RO","RR","TO"],
+    "Nordeste":     ["AL","BA","CE","MA","PB","PE","PI","RN","SE"],
+    "Centro-Oeste": ["DF","GO","MS","MT"],
+    "Sudeste":      ["ES","MG","RJ","SP"],
+    "Sul":          ["PR","RS","SC"]
+  };
+
+  var NOME_UF = {
+    AC:"Acre",AM:"Amazonas",AP:"Amapá",PA:"Pará",RO:"Rondônia",RR:"Roraima",TO:"Tocantins",
+    AL:"Alagoas",BA:"Bahia",CE:"Ceará",MA:"Maranhão",PB:"Paraíba",PE:"Pernambuco",PI:"Piauí",RN:"Rio Grande do Norte",SE:"Sergipe",
+    DF:"Distrito Federal",GO:"Goiás",MS:"Mato Grosso do Sul",MT:"Mato Grosso",
+    ES:"Espírito Santo",MG:"Minas Gerais",RJ:"Rio de Janeiro",SP:"São Paulo",
+    PR:"Paraná",RS:"Rio Grande do Sul",SC:"Santa Catarina"
+  };
+
+  // Estados ATENDIDOS hoje (têm desconto disponível). Os demais entram em lista de espera.
+  var ATENDIDOS = ["CE","GO","SP","RN","MT","RS","SC","BA","PI","AL","MG","MA","PR","RJ","PB","PA","ES","PE"];
+  function atende(uf){ return ATENDIDOS.indexOf(uf) !== -1; }
+
+  // Estado -> distribuidoras (só usado para os estados atendidos)
+  var DIST = {
+    AC:["Energisa Acre"],
+    AM:["Amazonas Energia"],
+    AP:["CEA Equatorial (Amapá)"],
+    PA:["Equatorial Pará"],
+    RO:["Energisa Rondônia"],
+    RR:["Roraima Energia"],
+    TO:["Energisa Tocantins"],
+    AL:["Equatorial Alagoas"],
+    BA:["Neoenergia Coelba"],
+    CE:["Enel Ceará"],
+    MA:["Equatorial Maranhão"],
+    PB:["Energisa Paraíba"],
+    PE:["Neoenergia Pernambuco"],
+    PI:["Equatorial Piauí"],
+    RN:["Neoenergia Cosern"],
+    SE:["Energisa Sergipe","Sulgipe"],
+    DF:["Neoenergia Brasília (CEB)"],
+    GO:["Equatorial Goiás"],
+    MS:["Energisa Mato Grosso do Sul","Elektro (Neoenergia)"],
+    MT:["Energisa Mato Grosso"],
+    ES:["EDP Espírito Santo"],
+    MG:["CEMIG"],
+    RJ:["Enel Rio","Light"],
+    SP:["Neoenergia Elektro","CPFL Paulista","CPFL Santa Cruz","CPFL Piratininga","EDP São Paulo","Energisa Sul-Sudeste"],
+    PR:["COPEL"],
+    RS:["RGE","CEEE Equatorial"],
+    SC:["CELESC"]
+  };
+
+  // ---- estado do quiz ----
+  var dados = { regiao:"", estado:"", distribuidora:"", nome:"", email:"" };
+  var stepAtual = 1;
+
+  var steps = document.querySelectorAll('.step');
+  var progress = document.querySelectorAll('#progress i');
+
+  function irPara(n){
+    stepAtual = n;
+    steps.forEach(function(s){ s.classList.toggle('on', +s.dataset.step === n); });
+    progress.forEach(function(p,i){ p.classList.toggle('done', i < n); });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // ETAPA 1 -> 2 (botões "Sim"/"Com certeza")
+  document.querySelectorAll('.step[data-step="1"] .opt').forEach(function(o){
+    o.addEventListener('click', function(){ renderRegioes(); irPara(2); });
+  });
+
+  // ETAPA 2 — regiões
+  function renderRegioes(){
+    var box = document.getElementById('regioes');
+    box.innerHTML = '';
+    Object.keys(REGIOES).forEach(function(r){
+      var el = document.createElement('div');
+      el.className = 'opt'; el.textContent = r;
+      el.addEventListener('click', function(){
+        dados.regiao = r; renderEstados(r); irPara(3);
+      });
+      box.appendChild(el);
+    });
+  }
+
+  // ETAPA 3 — estados da região
+  function renderEstados(regiao){
+    var box = document.getElementById('estados');
+    box.innerHTML = '';
+    REGIOES[regiao].forEach(function(uf){
+      var el = document.createElement('div');
+      el.className = 'opt'; el.textContent = NOME_UF[uf] + ' (' + uf + ')';
+      el.addEventListener('click', function(){
+        dados.estado = uf;
+        if (atende(uf)) {
+          renderDistribuidoras(uf); irPara(4);
+        } else {
+          // estado não atendido: pula a distribuidora, vai direto pra captura (lista de espera)
+          dados.distribuidora = '';
+          prepararResultado();
+          irPara(5);
+        }
+      });
+      box.appendChild(el);
+    });
+  }
+
+  // ETAPA 4 — distribuidoras do estado
+  function renderDistribuidoras(uf){
+    var lista = DIST[uf] || [];
+    var titulo = document.getElementById('dist-titulo');
+    var box = document.getElementById('distribuidoras');
+    box.innerHTML = '';
+
+    if (lista.length > 1) {
+      titulo.textContent = 'Qual dessas aparece na sua conta de luz?';
+    } else {
+      titulo.textContent = 'Confirme a sua distribuidora';
+    }
+
+    lista.forEach(function(d){
+      var el = document.createElement('div');
+      el.className = 'opt'; el.textContent = d;
+      el.addEventListener('click', function(){ dados.distribuidora = d; prepararResultado(); irPara(5); });
+      box.appendChild(el);
+    });
+
+    // opção "Outra / não está na lista" — nunca trava o fluxo
+    var outra = document.createElement('div');
+    outra.className = 'opt';
+    outra.textContent = 'Outra / não está na lista';
+    outra.addEventListener('click', function(){ dados.distribuidora = 'Outra (não listada)'; prepararResultado(); irPara(5); });
+    box.appendChild(outra);
+  }
+
+  // ETAPA 5 — texto de resultado
+  function prepararResultado(){
+    var titulo = document.getElementById('result-titulo');
+    var texto = document.getElementById('result-texto');
+    var ufNome = NOME_UF[dados.estado] || dados.estado;
+
+    var btnTxt = document.getElementById('btn-wa-txt');
+    if (!atende(dados.estado)) {
+      // estado não atendido — lista de espera
+      titulo.textContent = 'Ainda não chegamos aí';
+      texto.innerHTML = 'Ainda não atendemos <b>' + ufNome + '</b>, mas estamos expandindo. Deixe seu contato que avisamos assim que o desconto chegar na sua região!';
+      if (btnTxt) btnTxt.textContent = 'Entrar na lista de espera';
+    } else if (dados.distribuidora === 'Outra (não listada)') {
+      titulo.textContent = 'Vamos verificar pra você';
+      texto.innerHTML = 'Nossa equipe pode confirmar a cobertura na sua região agora mesmo. Deixe seu contato que retornamos!';
+    } else {
+      titulo.textContent = 'Boa notícia!';
+      texto.innerHTML = 'Você está na área da <b>' + dados.distribuidora + '</b> (' + ufNome + '). Você pode ter <b>desconto na sua conta de luz</b> com a Sunne Sul!';
+      if (btnTxt) btnTxt.textContent = 'Falar no WhatsApp';
+    }
+  }
+
+  // ---- navegação: voltar ----
+  document.querySelectorAll('.back').forEach(function(b){
+    b.addEventListener('click', function(){ irPara(+b.dataset.back); });
+  });
+
+  // ---- captura de UTM/fbclid (preserva origem do anúncio) ----
+  function getTrackingParams(){
+    try {
+      var p = new URLSearchParams(window.location.search);
+      var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+      var out = [];
+      keys.forEach(function(k){ if(p.get(k)) out.push(k + '=' + p.get(k)); });
+      return out.join(' | ');
+    } catch(e){ return ''; }
+  }
+
+  // ---- submit: valida, salva, dispara conversão, abre WhatsApp ----
+  var form = document.getElementById('lead-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var nome = document.getElementById('q-nome').value.trim();
+    var email = document.getElementById('q-email').value.trim();
+    var fNome = document.getElementById('f-nome');
+    var fEmail = document.getElementById('f-email');
+    var okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var valido = true;
+
+    if (!nome) { fNome.classList.add('invalid'); valido = false; } else { fNome.classList.remove('invalid'); }
+    if (!okEmail) { fEmail.classList.add('invalid'); valido = false; } else { fEmail.classList.remove('invalid'); }
+    if (!valido) return;
+
+    dados.nome = nome; dados.email = email;
+
+    // salva a resposta completa (localStorage — dá pra consultar depois)
+    try {
+      var reg = JSON.parse(localStorage.getItem('sunne_quiz_leads') || '[]');
+      reg.push({ ts:new Date().toISOString(), regiao:dados.regiao, estado:dados.estado,
+                 distribuidora:dados.distribuidora, nome:dados.nome, email:dados.email,
+                 origem:getTrackingParams() });
+      localStorage.setItem('sunne_quiz_leads', JSON.stringify(reg));
+    } catch(e){}
+
+    // conversões (Google Ads + Meta Pixel, se instalado)
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-18142105077/dZ0sCKv0ktwcEPWb6spD'});
+    }
+    if (typeof fbq === 'function' && typeof META_PIXEL_ID !== 'undefined' && META_PIXEL_ID !== 'SEU_PIXEL_ID') {
+      fbq('track', 'Lead');
+    }
+
+    // mensagem pré-preenchida do WhatsApp
+    var ufNome = NOME_UF[dados.estado] || dados.estado;
+    var msg;
+    if (!atende(dados.estado)) {
+      msg = 'Olá, meu nome é ' + nome + ', e-mail ' + email + ', moro em ' + ufNome +
+            '. Vi que ainda não atendem minha região, mas quero entrar na lista de espera para quando o desconto na conta de luz chegar aqui.';
+    } else if (dados.distribuidora === 'Outra (não listada)') {
+      msg = 'Olá, meu nome é ' + nome + ', e-mail ' + email + ', moro em ' + ufNome +
+            '. Minha distribuidora não está na lista, mas quero falar sobre o desconto na conta de luz.';
+    } else {
+      msg = 'Olá, meu nome é ' + nome + ', e-mail ' + email + ', moro em ' + ufNome +
+            ' e minha distribuidora é ' + dados.distribuidora + '. Quero saber mais sobre o desconto na conta de luz.';
+    }
+    var origem = getTrackingParams();
+    if (origem) msg += ' (origem: ' + origem + ')';
+
+    var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+    window.location.href = url;
+  });
+
+})();
+</script>
+</body>
+</html>
