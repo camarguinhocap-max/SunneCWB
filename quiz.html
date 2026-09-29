@@ -12,8 +12,8 @@
 </script>
 
 <!-- ============================================================
-     META PIXEL — Sunne (SunneSul1). ID já configurado abaixo.
-     Dispara PageView no carregamento e evento "Lead" no clique final do WhatsApp.
+     META PIXEL — COLE O SEU ID onde está SEU_PIXEL_ID (2 lugares).
+     Enquanto o ID não for colado, o Pixel fica inativo (não quebra o site).
      ============================================================ -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -24,7 +24,7 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  var META_PIXEL_ID = '1582760926808353'; // Pixel SunneSul1
+  var META_PIXEL_ID = 'SEU_PIXEL_ID'; // <<< troque aqui
   if (META_PIXEL_ID && META_PIXEL_ID !== 'SEU_PIXEL_ID') {
     fbq('init', META_PIXEL_ID);
     fbq('track', 'PageView');
@@ -56,11 +56,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Descubra seu desconto na conta de luz | Sunne Sul</title>
-<meta name="description" content="Responda algumas perguntas rápidas e descubra se você pode ter desconto na conta de luz com energia por assinatura. Grátis e sem compromisso.">
+<meta name="description" content="Responda 3 perguntas rápidas e descubra se você pode ter desconto na conta de luz com energia por assinatura. Grátis e sem compromisso.">
 <link rel="canonical" href="https://sunnesul.com.br/quiz">
 <meta property="og:url" content="https://sunnesul.com.br/quiz">
 <meta property="og:title" content="Descubra seu desconto na conta de luz">
-<meta property="og:description" content="Responda algumas perguntas rápidas e descubra se você pode ter desconto na conta de luz. Grátis e sem compromisso.">
+<meta property="og:description" content="Responda 3 perguntas rápidas e descubra se você pode ter desconto na conta de luz. Grátis e sem compromisso.">
 <style>
   :root{--stage:#0A0A0B;--stage-2:#111013;--text:#F6F2EA;--muted:#9A948B;--brand:#23A455;
     --brand-ink:#04120A;--brand-soft:rgba(35,164,85,.22);--gold:#F5B23E;
@@ -161,7 +161,7 @@
     <section class="step on" data-step="1">
       <div class="eyebrow">Descubra agora</div>
       <h1>Quer economizar na sua conta de luz?</h1>
-      <p class="lead">Responda algumas perguntas rápidas e veja se você tem direito a desconto com energia por assinatura. É grátis.</p>
+      <p class="lead">Responda 3 perguntas rápidas e veja se você tem direito a desconto com energia por assinatura. É grátis.</p>
       <div class="opts cols2">
         <div class="opt" data-next="2">Sim</div>
         <div class="opt" data-next="2">Com certeza</div>
@@ -170,7 +170,7 @@
 
     <!-- ETAPA 2 — região -->
     <section class="step" data-step="2">
-      <div class="eyebrow">Passo 1</div>
+      <div class="eyebrow">Passo 1 de 3</div>
       <h1>Em qual região do Brasil você mora?</h1>
       <div class="opts" id="regioes"></div>
       <button class="back" data-back="1">← Voltar</button>
@@ -178,7 +178,7 @@
 
     <!-- ETAPA 3 — estado -->
     <section class="step" data-step="3">
-      <div class="eyebrow">Passo 2</div>
+      <div class="eyebrow">Passo 2 de 3</div>
       <h1>Em qual estado você está?</h1>
       <div class="opts cols2" id="estados"></div>
       <button class="back" data-back="2">← Voltar</button>
@@ -186,7 +186,7 @@
 
     <!-- ETAPA 4 — distribuidora -->
     <section class="step" data-step="4">
-      <div class="eyebrow">Passo 3</div>
+      <div class="eyebrow">Passo 3 de 3</div>
       <h1 id="dist-titulo">Qual dessas aparece na sua conta de luz?</h1>
       <div class="opts" id="distribuidoras"></div>
       <button class="back" data-back="3">← Voltar</button>
@@ -223,7 +223,7 @@
   </main>
 
   <footer class="footer">
-    <small>Sunne Sul · Assessoria de energia — Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul. · CNPJ 68.200.157/0001-02 · SunneSul é operado por um Assessor de Energia credenciado autônomo. Não é o site oficial da Sunne, cuja página oficial é <a href="https://sunne.com.br" target="_blank" rel="noopener">sunne.com.br</a>.</small>
+    <small>Sunne Sul · Assessoria de energia — a Sunne já está em 18 estados e atende mais de 45 mil clientes. · CNPJ 68.200.157/0001-02 · SunneSul é operado por um Assessor de Energia credenciado autônomo. Não é o site oficial da Sunne, cuja página oficial é <a href="https://sunne.com.br" target="_blank" rel="noopener">sunne.com.br</a>.</small>
   </footer>
 
 <script>

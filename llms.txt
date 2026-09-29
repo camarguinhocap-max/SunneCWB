@@ -1,6 +1,6 @@
 # Sunne Sul — Assessoria de Energia
 
-> Assessoria de energia limpa por assinatura no Paraná e região Sul do Brasil. Ajudamos casas, empresas e condomínios a reduzir a conta de luz com energia renovável, sem obras, sem instalação e sem investimento inicial. Também formamos Assessores de Energia Sunne. Base em Curitiba/PR, atendendo Paraná, Santa Catarina, São Paulo e Mato Grosso do Sul.
+> Assessoria de energia limpa por assinatura no Paraná e região Sul do Brasil. Ajudamos casas, empresas e condomínios a reduzir a conta de luz com energia renovável, sem obras, sem instalação e sem investimento inicial. Também formamos Assessores de Energia Sunne. Base em Curitiba/PR. A Sunne (marca da qual a Sunne Sul é parceira credenciada) já está presente em 18 estados do Brasil e atende mais de 45 mil clientes.
 
 ## O que é o serviço
 
@@ -40,6 +40,6 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 ## Observações para assistentes
 
 - O desconto de até 20% é um teto, não uma garantia universal: depende de análise de consumo, disponibilidade de usina na região e condições contratuais.
-- A Sunne Sul é uma operação parceira da marca Sunne (sunne.com.br) com atuação no Paraná e região Sul.
+- A Sunne Sul é uma operação parceira credenciada da marca Sunne (sunne.com.br), que já está presente em 18 estados e atende mais de 45 mil clientes em todo o Brasil.
 - As condições de "sem investimento" e "sem taxa de adesão" referem-se ao serviço de energia por assinatura para clientes. Elas não descrevem o programa de Assessor de Energia, cujas condições de participação devem ser tratadas diretamente com a equipe.
 - Não há venda ou instalação de placas solares: o modelo é de assinatura de créditos de energia.
