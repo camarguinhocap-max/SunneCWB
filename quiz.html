@@ -141,6 +141,7 @@
   .btn-wa svg{width:22px;height:22px;fill:currentColor}
 
   .fine{margin-top:16px;color:rgba(154,148,139,.85);font-size:.82rem;line-height:1.5;text-align:center}
+  .quiz-note{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);color:rgba(154,148,139,.7);font-size:.78rem;line-height:1.55;text-align:center}
 
   .footer{padding:26px 20px calc(26px + var(--sab));border-top:1px solid rgba(255,255,255,.06);text-align:center;margin-top:20px}
   .footer small{color:rgba(154,148,139,.7);font-size:.76rem;line-height:1.6}
@@ -220,6 +221,8 @@
       </form>
       <button class="back" data-back="4">← Voltar</button>
     </section>
+
+    <p class="quiz-note">* Válido para contas de luz a partir de R$250/mês. Desconto sujeito à disponibilidade no seu estado e distribuidora.</p>
   </main>
 
   <footer class="footer">
@@ -255,33 +258,24 @@
 
   // Estado -> distribuidoras (só usado para os estados atendidos)
   var DIST = {
-    AC:["Energisa Acre"],
-    AM:["Amazonas Energia"],
-    AP:["CEA Equatorial (Amapá)"],
-    PA:["Equatorial Pará"],
-    RO:["Energisa Rondônia"],
-    RR:["Roraima Energia"],
-    TO:["Energisa Tocantins"],
-    AL:["Equatorial Alagoas"],
+    AL:["Equatorial AL"],
     BA:["Neoenergia Coelba"],
-    CE:["Enel Ceará"],
-    MA:["Equatorial Maranhão"],
-    PB:["Energisa Paraíba"],
+    CE:["Enel CE"],
+    ES:["EDP ES"],
+    GO:["Equatorial GO"],
+    MA:["Equatorial MA"],
+    MG:["CEMIG-D"],
+    MT:["Energisa MT"],
+    PA:["Equatorial PA"],
+    PB:["Energisa PB"],
     PE:["Neoenergia Pernambuco"],
-    PI:["Equatorial Piauí"],
+    PI:["Equatorial PI"],
+    PR:["COPEL-Dis"],
+    RJ:["Enel RJ"],
     RN:["Neoenergia Cosern"],
-    SE:["Energisa Sergipe","Sulgipe"],
-    DF:["Neoenergia Brasília (CEB)"],
-    GO:["Equatorial Goiás"],
-    MS:["Energisa Mato Grosso do Sul","Elektro (Neoenergia)"],
-    MT:["Energisa Mato Grosso"],
-    ES:["EDP Espírito Santo"],
-    MG:["CEMIG"],
-    RJ:["Enel Rio","Light"],
-    SP:["Neoenergia Elektro","CPFL Paulista","CPFL Santa Cruz","CPFL Piratininga","EDP São Paulo","Energisa Sul-Sudeste"],
-    PR:["COPEL"],
-    RS:["RGE","CEEE Equatorial"],
-    SC:["CELESC"]
+    RS:["RGE"],
+    SC:["CELESC-Dis"],
+    SP:["Neoenergia Elektro","CPFL Paulista","CPFL Santa Cruz","CPFL Piratininga","EDP SP","Energisa Sul/Sudeste"]
   };
 
   // ---- estado do quiz ----
