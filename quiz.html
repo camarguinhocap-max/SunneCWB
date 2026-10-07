@@ -293,6 +293,14 @@
     4: 'Passo4_Distribuidora',
     5: 'Passo5_Captura'
   };
+  // nomes de EVENTO distintos por etapa (pra o funil do GA4 ler direto, sem dimensão personalizada)
+  var EVENTO_ETAPA = {
+    1: 'quiz_p1_abriu',
+    2: 'quiz_p2_regiao',
+    3: 'quiz_p3_estado',
+    4: 'quiz_p4_distribuidora',
+    5: 'quiz_p5_captura'
+  };
   var etapasVistas = {};
 
   function trackStep(n){
@@ -301,8 +309,18 @@
     etapasVistas[n] = true;
     var nomeEtapa = NOMES_ETAPA[n] || ('Passo' + n);
 
-    // Google Analytics (GA4) — evento "quiz_etapa" com número, nome e dados escolhidos
+    var nomeEvento = EVENTO_ETAPA[n] || ('quiz_p' + n);
+
+    // Google Analytics (GA4)
     if (typeof gtag === 'function') {
+      // evento específico da etapa (quiz_p1_abriu, quiz_p2_regiao, ...) — usado no funil
+      gtag('event', nomeEvento, {
+        etapa_num: n,
+        etapa_nome: nomeEtapa,
+        estado: dados.estado || '',
+        distribuidora: dados.distribuidora || ''
+      });
+      // evento genérico quiz_etapa (mantido pra relatórios agregados)
       gtag('event', 'quiz_etapa', {
         etapa_num: n,
         etapa_nome: nomeEtapa,
@@ -310,8 +328,14 @@
         distribuidora: dados.distribuidora || ''
       });
     }
-    // Meta Pixel — evento customizado "QuizEtapa"
+    // Meta Pixel — evento customizado por etapa + genérico
     if (typeof fbq === 'function' && typeof META_PIXEL_ID !== 'undefined' && META_PIXEL_ID !== 'SEU_PIXEL_ID') {
+      fbq('trackCustom', nomeEvento, {
+        etapa_num: n,
+        etapa_nome: nomeEtapa,
+        estado: dados.estado || '',
+        distribuidora: dados.distribuidora || ''
+      });
       fbq('trackCustom', 'QuizEtapa', {
         etapa_num: n,
         etapa_nome: nomeEtapa,
