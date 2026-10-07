@@ -285,11 +285,48 @@
   var steps = document.querySelectorAll('.step');
   var progress = document.querySelectorAll('#progress i');
 
+  // nomes de cada etapa (pra ler fácil nos relatórios do Meta/Google)
+  var NOMES_ETAPA = {
+    1: 'Passo1_Interesse',
+    2: 'Passo2_Regiao',
+    3: 'Passo3_Estado',
+    4: 'Passo4_Distribuidora',
+    5: 'Passo5_Captura'
+  };
+  var etapasVistas = {};
+
+  function trackStep(n){
+    // dispara só uma vez por etapa por sessão (não conta ida-e-volta como nova visita)
+    if (etapasVistas[n]) return;
+    etapasVistas[n] = true;
+    var nomeEtapa = NOMES_ETAPA[n] || ('Passo' + n);
+
+    // Google Analytics (GA4) — evento "quiz_etapa" com número, nome e dados escolhidos
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_etapa', {
+        etapa_num: n,
+        etapa_nome: nomeEtapa,
+        estado: dados.estado || '',
+        distribuidora: dados.distribuidora || ''
+      });
+    }
+    // Meta Pixel — evento customizado "QuizEtapa"
+    if (typeof fbq === 'function' && typeof META_PIXEL_ID !== 'undefined' && META_PIXEL_ID !== 'SEU_PIXEL_ID') {
+      fbq('trackCustom', 'QuizEtapa', {
+        etapa_num: n,
+        etapa_nome: nomeEtapa,
+        estado: dados.estado || '',
+        distribuidora: dados.distribuidora || ''
+      });
+    }
+  }
+
   function irPara(n){
     stepAtual = n;
     steps.forEach(function(s){ s.classList.toggle('on', +s.dataset.step === n); });
     progress.forEach(function(p,i){ p.classList.toggle('done', i < n); });
     window.scrollTo({top:0, behavior:'smooth'});
+    trackStep(n);
   }
 
   // ETAPA 1 -> 2 (botões "Sim"/"Com certeza")
@@ -453,6 +490,9 @@
     var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
     window.location.href = url;
   });
+
+  // registra que o visitante abriu o quiz (Passo 1), já no carregamento
+  trackStep(1);
 
 })();
 </script>
