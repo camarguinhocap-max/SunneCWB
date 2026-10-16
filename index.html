@@ -609,6 +609,58 @@
     </div>
   </section>
 
+  <!-- ============ DUAS FORMAS DE ECONOMIZAR (assinatura x leasing) ============ -->
+  <style>
+    .duas { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .duas__card { display: flex; flex-direction: column; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; color: inherit; transition: transform .2s var(--ease), border-color .2s; }
+    .duas__card:hover { transform: translateY(-3px); border-color: var(--brand); }
+    .duas__card--sol { border-color: rgba(245,178,62,0.4); background: radial-gradient(120% 120% at 100% 0%, rgba(245,178,62,0.10), transparent 60%), rgba(255,255,255,0.03); }
+    .duas__card--sol:hover { border-color: var(--accent); }
+    .duas__tag { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--brand); }
+    .duas__card--sol .duas__tag { color: var(--accent); }
+    .duas__card h3 { margin-top: 12px; font-family: var(--font-display, Georgia, serif); font-weight: 300; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.1; }
+    .duas__card p { margin-top: 12px; color: var(--muted); line-height: 1.6; }
+    .duas__card ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .duas__card li { display: flex; gap: 10px; font-size: .97rem; }
+    .duas__card li::before { content: "✓"; color: var(--brand); font-weight: 700; }
+    .duas__card--sol li::before { color: var(--accent); }
+    .duas__go { margin-top: auto; padding-top: 22px; font-weight: 600; color: var(--brand); }
+    .duas__card--sol .duas__go { color: var(--accent); }
+    @media (max-width: 820px) { .duas { grid-template-columns: 1fr; } }
+  </style>
+  <section class="section" id="duas-formas">
+    <div class="wrap">
+      <div class="eyebrow">Duas formas de economizar</div>
+      <h2 class="section__title">Escolha o caminho que combina com você</h2>
+      <p class="section__lead">
+        Quer desconto já, sem mexer em nada? <b>Energia por assinatura.</b>
+        Tem imóvel próprio e quer ter a sua usina sem investir? <b>Leasing de placas solares.</b>
+      </p>
+      <div class="duas">
+        <a class="duas__card" href="/energia-por-assinatura">
+          <span class="duas__tag">Energia por assinatura</span>
+          <h3>Até 20% de desconto desde o 1º mês</h3>
+          <ul>
+            <li>Sem obras e sem instalação</li>
+            <li>Serve para imóvel próprio ou alugado</li>
+            <li>Adesão 100% digital</li>
+          </ul>
+          <span class="duas__go">Ver como funciona →</span>
+        </a>
+        <a class="duas__card duas__card--sol" href="/leasing-de-placas-solares">
+          <span class="duas__tag">Leasing de placas solares · AlugSol</span>
+          <h3>Sua usina com zero investimento</h3>
+          <ul>
+            <li>61 parcelas no valor aproximado da sua conta</li>
+            <li>Manutenção inclusa durante o contrato</li>
+            <li>Depois, as placas são suas e a conta cai até 95%</li>
+          </ul>
+          <span class="duas__go">Ver se minha cidade está aberta →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SEÇÃO 2: TORNE-SE UM ASSESSOR ============ -->
   <section class="section section--assessor" id="assessor">
     <div class="wrap">
@@ -762,6 +814,7 @@
       <nav>
         <a href="#reduzir">Reduzir minha conta</a>
         <a href="/energia-por-assinatura">Energia por assinatura</a>
+        <a href="/leasing-de-placas-solares">Leasing de placas solares</a>
         <a href="/assessor">Ser assessor</a>
         <a href="/blog">Artigos</a>
         <a href="/quem-somos">Quem somos</a>

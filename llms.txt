@@ -16,6 +16,7 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 
 - [Início](https://sunnesul.com.br/): apresentação da Sunne Sul, do sol até a casa do cliente.
 - [Energia por assinatura](https://sunnesul.com.br/energia-por-assinatura): como funciona o modelo, vantagens, passo a passo na conta, simulador de economia e perguntas frequentes.
+- [Leasing de placas solares (AlugSol)](https://sunnesul.com.br/leasing-de-placas-solares): usina solar no telhado do cliente sem entrada e sem taxa de adesão — 61 parcelas no boleto no valor aproximado da conta de luz atual, manutenção da Sunne durante o contrato e, ao final, o equipamento passa a ser do cliente. Exige imóvel próprio e consumo a partir de 320 kWh/mês. Atendimento em todo o Ceará e Rio Grande do Norte; nos demais estados, uma região abre quando reúne 10 clientes aprovados num raio de 50 km.
 - [Seja um Assessor de Energia Sunne](https://sunnesul.com.br/assessor): o papel do assessor, por que o momento de mercado favorece quem entra agora, as duas trilhas de crescimento (Assessor e Crescimento), como começar (cadastro, validação e início) e dúvidas frequentes.
 - [Quem somos](https://sunnesul.com.br/quem-somos): explica que a Sunne Sul é parceira licenciada da Sunne (marca nacional de energia por assinatura fundada em 2018), com contexto sobre a trajetória e os investidores da Sunne.
 

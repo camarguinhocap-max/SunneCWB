@@ -6,6 +6,8 @@
 /assinatura    /energia-por-assinatura.html   200
 /assessor      /assessor.html                 200
 /blog          /blog.html                     200
+/leasing       /leasing-de-placas-solares.html  200
+/alugsol       /leasing-de-placas-solares.html  200
 
 # Erros caem na página 404 personalizada
 /simular   /simulacao   301
