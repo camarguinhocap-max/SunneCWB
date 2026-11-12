@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18142105077"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18142105077');
+  gtag('config', 'G-FJ7CF6958Y');
+</script>
+<!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '382658422532619');
+  fbq('track', 'PageView');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cadastro — Placas Solares | Sunne Sul</title>
+<meta name="description" content="Faça seu cadastro para a análise da sua usina solar com a Sunne Sul.">
+<!-- Página de anúncio: fica fora do Google -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0B">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --stage:#0A0A0B; --stage-2:#111013; --text:#F6F2EA; --muted:#9A948B;
+    --accent:#F5B23E; --accent-soft:rgba(245,178,62,0.14);
+    --brand:#23A455; --brand-ink:#04120A; --brand-soft:rgba(35,164,85,0.22);
+    --font-display:"Fraunces",Georgia,serif; --font-ui:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+    --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+    --sal:env(safe-area-inset-left,0px); --sar:env(safe-area-inset-right,0px);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--stage); color:var(--text); font-family:var(--font-ui); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.5; }
+  ::selection { background:var(--brand); color:var(--brand-ink); }
+  a { color:inherit; }
+  [hidden] { display:none !important; }
+
+  /* HEADER */
+  .header { position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between;
+    padding:14px calc(clamp(16px,5vw,48px) + var(--sar)) 14px calc(clamp(16px,5vw,48px) + var(--sal));
+    background:rgba(10,10,11,0.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.06); }
+  .header__logo { height:30px; width:auto; display:block; }
+
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding:0 30px; border-radius:999px; border:0; cursor:pointer; background:var(--brand); color:var(--brand-ink); font-family:var(--font-ui); font-weight:600; font-size:1rem; text-decoration:none; transition:transform .2s var(--ease),box-shadow .2s var(--ease); box-shadow:0 10px 30px var(--brand-soft); }
+  .btn:hover { transform:translateY(-2px); box-shadow:0 16px 42px var(--brand-soft); }
+  .btn:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  .btn--gold { background:var(--accent); color:#0A0A0B; box-shadow:0 10px 30px rgba(245,178,62,.28); }
+  .btn svg { width:20px; height:20px; flex:none; }
+  .btn--sm { height:44px; padding:0 20px; font-size:0.95rem; }
+
+  /* PAGE */
+  .page { position:relative; padding:clamp(40px,8vh,90px) calc(clamp(16px,6vw,64px) + var(--sar)) clamp(56px,10vh,110px) calc(clamp(16px,6vw,64px) + var(--sal)); overflow:hidden; }
+  .page::before { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(110% 60% at 85% 0%, rgba(245,178,62,0.13), transparent 55%), radial-gradient(120% 60% at 10% 0%, rgba(35,164,85,0.10), transparent 55%); }
+  .grid { max-width:1060px; margin:0 auto; display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(24px,5vw,56px); align-items:start; }
+  .grid > * { min-width:0; }
+  .eyebrow { font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:var(--brand); font-weight:600; }
+  h1 { margin-top:16px; font-family:var(--font-display); font-weight:300; font-size:clamp(2.1rem,5.2vw,3.4rem); line-height:1.05; letter-spacing:-0.015em; }
+  h1 em { font-style:italic; color:var(--accent); }
+  .lead { margin-top:16px; color:var(--muted); font-size:clamp(1rem,1.6vw,1.12rem); line-height:1.65; }
+
+  /* REQUISITOS */
+  .reqs { margin-top:28px; padding:22px; border-radius:20px; background:var(--accent-soft); border:1px solid rgba(245,178,62,.30); }
+  .reqs h2 { font-size:.8rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+  .reqs ul { list-style:none; margin-top:14px; display:grid; gap:14px; }
+  .reqs li { display:flex; gap:12px; align-items:flex-start; line-height:1.5; font-size:.95rem; color:var(--muted); }
+  .reqs li b { color:var(--text); }
+  .reqs li svg { width:20px; height:20px; flex:none; margin-top:1px; stroke:var(--accent); }
+  .reqs details { margin-top:6px; }
+  .reqs summary { cursor:pointer; color:var(--accent); font-size:.86rem; font-weight:600; list-style:none; display:inline-block; }
+  .reqs summary::-webkit-details-marker { display:none; }
+  .reqs details[open] summary { margin-bottom:6px; }
+  .reqs details p { font-size:.88rem; color:var(--muted); }
+
+  /* FORM */
+  .form-box { padding:clamp(20px,4vw,32px); border-radius:22px; background:var(--stage-2); border:1px solid rgba(255,255,255,.10); }
+  .form-box h2 { font-family:var(--font-display); font-weight:400; font-size:1.6rem; line-height:1.15; }
+  .fld { margin-top:16px; }
+  .fld > label, .fld > .lbl { display:block; font-size:.9rem; font-weight:600; margin-bottom:7px; }
+  .fld input[type=text], .fld input[type=tel], .fld select { width:100%; height:52px; padding:0 16px; border-radius:12px; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.14); color:var(--text); font-family:inherit; font-size:1rem; outline:none; transition:border-color .15s; }
+  .fld select { appearance:none; -webkit-appearance:none; padding-right:40px; background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%); background-position:calc(100% - 22px) 22px, calc(100% - 16px) 22px; background-size:6px 6px; background-repeat:no-repeat; }
+  .fld select option { background:#111013; }
+  .fld select:disabled { opacity:.55; }
+  .fld input:focus, .fld select:focus { border-color:var(--brand); }
+  .fld.err input[type=text], .fld.err input[type=tel], .fld.err select { border-color:#E5654B; }
+  .fld .help { margin-top:6px; color:var(--muted); font-size:.83rem; line-height:1.45; }
+  .fld .msg { display:none; margin-top:6px; color:#F08A72; font-size:.83rem; }
+  .fld.err .msg { display:block; }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:0 14px; }
+  .row2 > * { min-width:0; }
+
+  /* Opcoes em cartao (PF/PJ, tipo PJ, localidades) */
+  .opts { display:grid; gap:10px; }
+  .opts--2 { grid-template-columns:1fr 1fr; }
+  .opts--3 { grid-template-columns:repeat(3,1fr); }
+  .opt { position:relative; cursor:pointer; }
+  .opt input { position:absolute; opacity:0; pointer-events:none; }
+  .opt span { display:flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.35); font-weight:600; font-size:.97rem; text-align:center; line-height:1.25; transition:border-color .15s, background .15s, color .15s; }
+  .opt span::before { content:""; width:16px; height:16px; flex:none; border-radius:50%; border:2px solid rgba(255,255,255,.35); transition:all .15s; }
+  .opt:hover span { border-color:rgba(255,255,255,.3); }
+  .opt input:checked + span { border-color:var(--brand); background:rgba(35,164,85,.12); }
+  .opt input:checked + span::before { border-color:var(--brand); background:var(--brand); box-shadow:inset 0 0 0 3px #111013; }
+  .opt input:focus-visible + span { outline:2px solid var(--accent); outline-offset:2px; }
+  .opts--big .opt span { min-height:64px; font-size:1.05rem; }
+  .fld.err .opt span { border-color:#E5654B; }
+
+  .block { margin-top:4px; animation:in .35s var(--ease); }
+  @keyframes in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  .form-box .btn[type=submit] { width:100%; margin-top:24px; height:58px; font-size:1.05rem; }
+  .form-box .btn:disabled { opacity:.55; cursor:not-allowed; transform:none; }
+  .fine { margin-top:14px; color:rgba(154,148,139,.85); font-size:.8rem; line-height:1.5; text-align:center; }
+  .fine.bad { color:#F08A72; }
+
+  .ok { text-align:center; padding:20px 4px; }
+  .ok .check { width:58px; height:58px; margin:0 auto 16px; border-radius:50%; background:var(--brand); display:grid; place-items:center; }
+  .ok .check svg { width:30px; height:30px; stroke:var(--brand-ink); }
+  .ok h2 { font-family:var(--font-display); font-weight:300; font-size:1.9rem; line-height:1.1; }
+  .ok p { margin-top:14px; color:var(--muted); line-height:1.6; }
+  .ok .btn { margin-top:22px; }
+
+  .footer { padding:32px calc(clamp(16px,6vw,64px) + var(--sar)) calc(32px + var(--sab)) calc(clamp(16px,6vw,64px) + var(--sal)); border-top:1px solid rgba(255,255,255,0.06); }
+  .footer small { display:block; max-width:1060px; margin:0 auto; color:rgba(154,148,139,0.7); font-size:0.8rem; line-height:1.6; }
+
+  @media (max-width:900px) {
+    .grid { grid-template-columns:1fr; }
+  }
+  @media (max-width:560px) {
+    .row2 { grid-template-columns:1fr; }
+    .opts--3 { grid-template-columns:1fr; }
+    .opts--3 .opt span { justify-content:flex-start; }
+  }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="/"><img class="header__logo" src="Sunne-nova-logo-19.webp" alt="Sunne"></a>
+    <a class="btn btn--sm" href="https://wa.me/5541999594737?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20cadastro%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+
+  <main class="page">
+    <div class="grid">
+
+      <!-- LADO ESQUERDO: texto + requisitos -->
+      <div>
+        <div class="eyebrow">Cadastro</div>
+        <h1>Sua usina solar <em>no seu telhado</em></h1>
+        <p class="lead">Preencha seus dados em 1 minuto. A equipe da Sunne Sul analisa o seu caso e entra em contato.</p>
+
+        <div class="reqs">
+          <h2>Antes de cadastrar</h2>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+              <div>
+                <b>O imóvel precisa ser próprio*</b> — não é possível instalar placas solares em imóvel alugado.
+                <details>
+                  <summary>* Ver mais detalhes</summary>
+                  <p>Para <b>empresas</b> em imóvel alugado, pode ser possível. Cada caso é analisado pela equipe da Sunne Sul. Faça o cadastro que a gente avalia.</p>
+                </details>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div><b>Consumo mínimo de 300 kWh por mês.</b> Você encontra o consumo em kWh na sua conta de luz.</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l10-8 10 8"/><path d="M6 9.5l6-4.5 6 4.5"/><path d="M8 11h8"/></svg>
+              <div><b>Instalação somente em telhado.</b> Não instalamos no chão (solo).</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M10 21v-4h4v4"/></svg>
+              <div><b>Condomínios:</b> atende somente as <b>áreas comuns</b> do condomínio, não os apartamentos dos condôminos.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO: formulario -->
+      <div class="form-box" id="cadastro">
+        <form id="cad-form" name="cadastro" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="cadastro">
+          <p hidden><label>Não preencha: <input name="bot-field"></label></p>
+
+          <h2>Seus dados</h2>
+
+          <!-- 1. PF ou PJ -->
+          <div class="fld" id="f-tipo">
+            <span class="lbl">Você é:</span>
+            <div class="opts opts--2 opts--big" role="radiogroup" aria-label="Tipo de pessoa">
+              <label class="opt"><input type="radio" name="tipo_pessoa" value="Pessoa Física"><span>Pessoa Física</span></label>
+              <label class="opt"><input type="radio" name="tipo_pessoa" value="Pessoa Jurídica"><span>Pessoa Jurídica</span></label>
+            </div>
+            <div class="msg">Escolha Pessoa Física ou Pessoa Jurídica.</div>
+          </div>
+
+          <!-- 2a. Pessoa Fisica -->
+          <div class="block" id="b-pf" hidden>
+            <div class="fld" id="f-nome">
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome_completo" type="text" autocomplete="name" placeholder="Seu nome completo" disabled>
+              <div class="msg">Informe seu nome e sobrenome.</div>
+            </div>
+            <div class="fld" id="f-cpf">
+              <label for="cpf">CPF</label>
+              <input id="cpf" name="cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14" disabled>
+              <div class="msg">CPF inválido. Confira os números.</div>
+            </div>
+          </div>
+
+          <!-- 2b. Pessoa Juridica -->
+          <div class="block" id="b-pj" hidden>
+            <div class="fld" id="f-tipopj">
+              <span class="lbl">Tipo de Pessoa Jurídica</span>
+              <div class="opts opts--3" role="radiogroup" aria-label="Tipo de Pessoa Jurídica">
+                <label class="opt"><input type="radio" name="tipo_pj" value="Condomínio" disabled><span>Condomínio</span></label>
+                <label class="opt"><input type="radio" name="tipo_pj" value="Empresa" disabled><span>Empresa</span></label>
+                <label class="opt"><input type="radio" name="tipo_pj" value="Igreja" disabled><span>Igreja</span></label>
+              </div>
+              <div class="msg">Escolha o tipo.</div>
+            </div>
+            <div class="fld" id="f-razao">
+              <label for="razao">Razão social / Nome</label>
+              <input id="razao" name="razao_social" type="text" autocomplete="organization" placeholder="Razão social ou nome" disabled>
+              <div class="msg">Informe a razão social ou o nome.</div>
+            </div>
+            <div class="fld" id="f-cnpj">
+              <label for="cnpj">CNPJ</label>
+              <input id="cnpj" name="cnpj" type="text" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00" maxlength="18" disabled>
+              <div class="msg">CNPJ inválido. Confira os números.</div>
+            </div>
+            <div class="fld" id="f-contato">
+              <label for="contato">Nome da pessoa de contato</label>
+              <input id="contato" name="nome_contato" type="text" autocomplete="name" placeholder="Com quem vamos falar" disabled>
+              <div class="msg">Informe o nome da pessoa de contato.</div>
+            </div>
+          </div>
+
+          <!-- 3. Comum (PF e PJ) -->
+          <div class="block" id="b-comum" hidden>
+            <div class="fld" id="f-tel">
+              <label for="tel">Telefone / WhatsApp</label>
+              <input id="tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 90000-0000" maxlength="15">
+              <div class="msg">Informe um telefone com DDD.</div>
+            </div>
+            <div class="row2">
+              <div class="fld" id="f-estado">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado"><option value="">Selecione</option></select>
+                <div class="msg">Escolha o estado.</div>
+              </div>
+              <div class="fld" id="f-cidade">
+                <label for="cidade">Cidade</label>
+                <select id="cidade" name="cidade" disabled><option value="">Escolha o estado</option></select>
+                <input id="cidade-txt" type="text" placeholder="Digite sua cidade" hidden>
+                <div class="msg">Escolha a cidade.</div>
+              </div>
+            </div>
+            <div class="fld" id="f-loc">
+              <span class="lbl">Quantas localidades (contas de luz)?</span>
+              <div class="opts opts--2" role="radiogroup" aria-label="Quantidade de localidades">
+                <label class="opt"><input type="radio" name="localidades" value="1 localidade"><span>1 localidade</span></label>
+                <label class="opt"><input type="radio" name="localidades" value="2 ou mais localidades"><span>2 ou mais</span></label>
+              </div>
+              <div class="msg">Escolha uma opção.</div>
+            </div>
+            <div class="fld" id="f-valor" hidden>
+              <label for="valor" id="valor-lbl">Valor médio da conta de luz (R$)</label>
+              <input id="valor" name="valor_medio_conta" type="text" inputmode="numeric" placeholder="R$ 0">
+              <div class="help" id="valor-help" hidden>Some o valor médio de <b>todas</b> as contas e coloque o total aqui.</div>
+              <div class="msg">Informe o valor médio mensal.</div>
+            </div>
+
+            <button class="btn btn--gold" type="submit" id="submit-btn">Cadastrar</button>
+            <p class="fine" id="fine">Ao cadastrar, você autoriza a Sunne Sul a usar seus dados para analisar seu caso e entrar em contato. Sem custo e sem compromisso.</p>
+          </div>
+        </form>
+
+        <div class="ok" id="ok" hidden aria-live="polite">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h2 id="ok-title">Cadastro recebido!</h2>
+          <p>Seus dados chegaram para a equipe da Sunne Sul. Em breve entraremos em contato. Se preferir adiantar, chame a gente no WhatsApp.</p>
+          <a class="btn" id="ok-wa" href="https://wa.me/5541999594737" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6 8.9a5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c2.1.9 2.1.6 2.5.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>Sunne Sul · Assessoria de energia · CNPJ 68.200.157/0001-02 · SunneSul é operado por um Assessor de Energia credenciado autônomo. Não é o site oficial da Sunne, cuja página oficial é <a href="https://sunne.com.br" target="_blank" rel="noopener">sunne.com.br</a>.</small>
+  </footer>
+
+<script>
+(function(){
+  var WA = '5541999594737';
+  var UFS = [['AC','Acre'],['AL','Alagoas'],['AP','Amapá'],['AM','Amazonas'],['BA','Bahia'],['CE','Ceará'],['DF','Distrito Federal'],['ES','Espírito Santo'],['GO','Goiás'],['MA','Maranhão'],['MT','Mato Grosso'],['MS','Mato Grosso do Sul'],['MG','Minas Gerais'],['PA','Pará'],['PB','Paraíba'],['PR','Paraná'],['PE','Pernambuco'],['PI','Piauí'],['RJ','Rio de Janeiro'],['RN','Rio Grande do Norte'],['RS','Rio Grande do Sul'],['RO','Rondônia'],['RR','Roraima'],['SC','Santa Catarina'],['SP','São Paulo'],['SE','Sergipe'],['TO','Tocantins']];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var form = $('cad-form');
+  function so(d){ return d.replace(/\D/g,''); }
+  function marca(id, ok){ $(id).classList.toggle('err', !ok); return ok; }
+  function radio(name){ var r = form.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : ''; }
+
+  // ----- Mostrar/esconder blocos (campos escondidos ficam disabled e nao sao enviados) -----
+  function liga(bloco, on){
+    $(bloco).hidden = !on;
+    $(bloco).querySelectorAll('input,select').forEach(function(el){ el.disabled = !on; });
+  }
+  form.querySelectorAll('input[name="tipo_pessoa"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      var pf = r.value === 'Pessoa Física';
+      liga('b-pf', pf); liga('b-pj', !pf);
+      $('b-comum').hidden = false;
+      $('cidade').disabled = !$('estado').value;
+      $('f-tipo').classList.remove('err');
+    });
+  });
+  form.querySelectorAll('input[name="localidades"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      var varias = r.value !== '1 localidade';
+      $('f-valor').hidden = false;
+      $('valor-lbl').textContent = varias ? 'Soma do valor médio de todas as contas (R$)' : 'Valor médio da conta de luz (R$)';
+      $('valor-help').hidden = !varias;
+      $('f-loc').classList.remove('err');
+    });
+  });
+  form.querySelectorAll('input[name="tipo_pj"]').forEach(function(r){
+    r.addEventListener('change', function(){ $('f-tipopj').classList.remove('err'); });
+  });
+
+  // ----- Estados e cidades (IBGE) -----
+  var est = $('estado'), cid = $('cidade'), cidTxt = $('cidade-txt');
+  UFS.forEach(function(u){ var o = document.createElement('option'); o.value = u[0]; o.textContent = u[1]; est.appendChild(o); });
+  var cache = {};
+  function usaTexto(on){
+    // Se o IBGE falhar, a cidade vira campo de texto
+    cidTxt.hidden = !on; cid.hidden = on;
+    if (on) { cid.name = ''; cidTxt.name = 'cidade'; cid.disabled = true; }
+    else { cidTxt.name = ''; cid.name = 'cidade'; }
+  }
+  function preenche(lista){
+    cid.innerHTML = '<option value="">Selecione a cidade</option>';
+    lista.forEach(function(n){ var o = document.createElement('option'); o.value = n; o.textContent = n; cid.appendChild(o); });
+    cid.disabled = false;
+  }
+  est.addEventListener('change', function(){
+    var uf = est.value;
+    usaTexto(false);
+    if (!uf) { cid.innerHTML = '<option value="">Escolha o estado</option>'; cid.disabled = true; return; }
+    if (cache[uf]) return preenche(cache[uf]);
+    cid.innerHTML = '<option value="">Carregando cidades...</option>'; cid.disabled = true;
+    fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + uf + '/municipios?orderBy=nome')
+      .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function(d){
+        if (est.value !== uf) return;
+        cache[uf] = d.map(function(m){ return m.nome; });
+        preenche(cache[uf]);
+      })
+      .catch(function(){ if (est.value === uf) { usaTexto(true); cidTxt.value = ''; cidTxt.focus(); } });
+    marca('f-estado', true);
+  });
+  cid.addEventListener('change', function(){ if (cid.value) marca('f-cidade', true); });
+
+  // ----- Mascaras -----
+  $('cpf').addEventListener('input', function(){
+    var d = so(this.value).slice(0,11), o = d.slice(0,3);
+    if (d.length > 3) o += '.' + d.slice(3,6);
+    if (d.length > 6) o += '.' + d.slice(6,9);
+    if (d.length > 9) o += '-' + d.slice(9);
+    this.value = o;
+  });
+  $('cnpj').addEventListener('input', function(){
+    var d = so(this.value).slice(0,14), o = d.slice(0,2);
+    if (d.length > 2) o += '.' + d.slice(2,5);
+    if (d.length > 5) o += '.' + d.slice(5,8);
+    if (d.length > 8) o += '/' + d.slice(8,12);
+    if (d.length > 12) o += '-' + d.slice(12);
+    this.value = o;
+  });
+  $('tel').addEventListener('input', function(){
+    var d = so(this.value).slice(0,11);
+    if (d.length > 10) this.value = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+    else if (d.length > 6) this.value = '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6);
+    else if (d.length > 2) this.value = '(' + d.slice(0,2) + ') ' + d.slice(2);
+    else this.value = d;
+  });
+  $('valor').addEventListener('input', function(){
+    var d = so(this.value).slice(0,8);
+    this.value = d ? 'R$ ' + Number(d).toLocaleString('pt-BR') : '';
+  });
+
+  function cpfValido(c){
+    c = so(c);
+    if (c.length !== 11 || /^(\d)\1{10}$/.test(c)) return false;
+    for (var t = 9; t < 11; t++) {
+      var s = 0;
+      for (var i = 0; i < t; i++) s += Number(c[i]) * (t + 1 - i);
+      if (((s * 10) % 11) % 10 !== Number(c[t])) return false;
+    }
+    return true;
+  }
+  function cnpjValido(c){
+    c = so(c);
+    if (c.length !== 14 || /^(\d)\1{13}$/.test(c)) return false;
+    function dv(n){
+      var s = 0, p = n - 7;
+      for (var i = 0; i < n; i++) { s += Number(c[i]) * p--; if (p < 2) p = 9; }
+      var r = s % 11; return r < 2 ? 0 : 11 - r;
+    }
+    return dv(12) === Number(c[12]) && dv(13) === Number(c[13]);
+  }
+
+  // ----- Envio -----
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var tipo = radio('tipo_pessoa');
+    if (!marca('f-tipo', !!tipo)) { $('f-tipo').scrollIntoView({behavior:'smooth', block:'center'}); return; }
+    var pf = tipo === 'Pessoa Física';
+    var cidade = cidTxt.hidden ? cid.value : cidTxt.value.trim();
+    var loc = radio('localidades');
+    var ok = [];
+    if (pf) {
+      ok.push(marca('f-nome', $('nome').value.trim().split(/\s+/).length >= 2));
+      ok.push(marca('f-cpf', cpfValido($('cpf').value)));
+    } else {
+      ok.push(marca('f-tipopj', !!radio('tipo_pj')));
+      ok.push(marca('f-razao', $('razao').value.trim().length >= 2));
+      ok.push(marca('f-cnpj', cnpjValido($('cnpj').value)));
+      ok.push(marca('f-contato', $('contato').value.trim().length >= 2));
+    }
+    ok.push(marca('f-tel', so($('tel').value).length >= 10));
+    ok.push(marca('f-estado', !!est.value));
+    ok.push(marca('f-cidade', cidade.length >= 2));
+    ok.push(marca('f-loc', !!loc));
+    if (loc) ok.push(marca('f-valor', Number(so($('valor').value)) > 0));
+    if (!ok.every(Boolean)) {
+      var first = form.querySelector('.err'); if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    var btn = $('submit-btn'), fine = $('fine');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+    fine.classList.remove('bad');
+
+    var body = new URLSearchParams(new FormData(form)).toString();
+    fetch('/', { method:'POST', headers:{ 'Content-Type':'application/x-www-form-urlencoded' }, body: body })
+      .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); })
+      .then(function(){
+        var nome = pf ? $('nome').value.trim() : $('contato').value.trim();
+        $('ok-title').textContent = 'Pronto, ' + nome.split(/\s+/)[0] + '!';
+        var msg = 'Olá! Acabei de fazer meu cadastro no site da Sunne Sul. ' +
+          (pf ? 'Nome: ' + nome : radio('tipo_pj') + ': ' + $('razao').value.trim() + ' · Contato: ' + nome) +
+          ' · Cidade: ' + cidade + '/' + est.value + '.';
+        $('ok-wa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+        form.hidden = true;
+        $('ok').hidden = false;
+        $('cadastro').scrollIntoView({behavior:'smooth', block:'start'});
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {'send_to': 'AW-18142105077/dZ0sCKv0ktwcEPWb6spD'});
+          gtag('event', 'cadastro', { tipo_pessoa: pf ? 'PF' : 'PJ', estado: est.value });
+        }
+        if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'cadastro', content_category: pf ? 'PF' : 'PJ' });
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Cadastrar';
+        fine.classList.add('bad');
+        fine.textContent = 'Não foi possível enviar agora. Tente de novo em instantes ou fale com a gente no WhatsApp.';
+      });
+  });
+})();
+</script>
+</body>
+</html>
