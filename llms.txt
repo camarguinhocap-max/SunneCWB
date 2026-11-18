@@ -1,24 +1,36 @@
 # Sunne Sul — Assessoria de Energia
 
-> Assessoria de energia limpa por assinatura no Paraná e região Sul do Brasil. Ajudamos casas, empresas e condomínios a reduzir a conta de luz com energia renovável, sem obras, sem instalação e sem investimento inicial. Também formamos Assessores de Energia Sunne. Base em Curitiba/PR. A Sunne (marca da qual a Sunne Sul é parceira credenciada) já está presente em 18 estados do Brasil e atende mais de 45 mil clientes.
+> Site de um Assessor de Energia autônomo que trabalha com a Sunne, com base em Curitiba/PR. Não é o site oficial da Sunne (sunne.com.br). Oferece dois produtos diferentes: energia por assinatura (sem placas e sem instalação) e AlugSol (leasing de placas solares). A Sunne atende 18 estados do Brasil e mais de 45 mil clientes.
 
-## O que é o serviço
+## Estados atendidos (energia por assinatura)
+
+Alagoas, Bahia, Ceará, Espírito Santo, Goiás, Maranhão, Minas Gerais, Mato Grosso, Pará, Paraíba, Pernambuco, Piauí, Paraná, Rio de Janeiro, Rio Grande do Norte, Rio Grande do Sul, Santa Catarina e São Paulo.
+
+## Produto 1: Energia por assinatura
+
+Não vende placas e não instala nada.
 
 A energia por assinatura permite que o cliente receba créditos de energia gerados por usinas solares parceiras, abatidos diretamente na fatura da distribuidora. Nada muda fisicamente na instalação: a energia continua chegando pela mesma rede, e a distribuidora segue responsável pela manutenção. O que muda é a origem contábil da energia e, com isso, o preço final.
 
-- **Desconto**: até 20% na fatura, conforme análise do perfil de consumo e disponibilidade de usina na região; condições definidas em contrato.
+- **Desconto**: até 25% na fatura, podendo variar de 1% a 25%, conforme análise do perfil de consumo e disponibilidade de usina na região; condições definidas em contrato.
 - **Sem obras, sem instalação, sem investimento inicial** e sem taxa de adesão.
 - **Adesão 100% digital**, sem alteração na rede elétrica do cliente.
 - **Base legal**: regulado pela ANEEL, Lei 14.300/2022 (marco legal da geração distribuída) e Resolução Normativa 1.059/2023.
 - **Público**: residências, comércios, escritórios, clínicas, condomínios e pequenas indústrias com conta de luz média ou alta.
+
+## Produto 2: AlugSol (leasing de placas solares)
+
+Vende placas solares no formato de leasing, com instalação no telhado do cliente. O cliente paga 61 parcelas e, depois de cerca de 5 anos, as placas passam a ser dele. Exige imóvel próprio e consumo a partir de 320 kWh/mês.
 
 ## Páginas principais
 
 - [Início](https://sunnesul.com.br/): apresentação da Sunne Sul, do sol até a casa do cliente.
 - [Energia por assinatura](https://sunnesul.com.br/energia-por-assinatura): como funciona o modelo, vantagens, passo a passo na conta, simulador de economia e perguntas frequentes.
 - [Leasing de placas solares (AlugSol)](https://sunnesul.com.br/leasing-de-placas-solares): usina solar no telhado do cliente sem entrada e sem taxa de adesão — 61 parcelas no boleto no valor aproximado da conta de luz atual, manutenção da Sunne durante o contrato e, ao final, o equipamento passa a ser do cliente. Exige imóvel próprio e consumo a partir de 320 kWh/mês. Atendimento em todo o Ceará e Rio Grande do Norte; nos demais estados, uma região abre quando reúne 10 clientes aprovados num raio de 50 km.
+- [Simulação grátis](https://sunnesul.com.br/simulacao): o cliente envia a conta de luz e recebe uma simulação de economia.
+- [Quiz de desconto](https://sunnesul.com.br/quiz): verifica se o estado e a distribuidora do cliente são atendidos.
 - [Seja um Assessor de Energia Sunne](https://sunnesul.com.br/assessor): o papel do assessor, por que o momento de mercado favorece quem entra agora, as duas trilhas de crescimento (Assessor e Crescimento), como começar (cadastro, validação e início) e dúvidas frequentes.
-- [Quem somos](https://sunnesul.com.br/quem-somos): explica que a Sunne Sul é parceira licenciada da Sunne (marca nacional de energia por assinatura fundada em 2018), com contexto sobre a trajetória e os investidores da Sunne.
+- [Quem somos](https://sunnesul.com.br/quem-somos): explica que a Sunne Sul é o site de um assessor autônomo que trabalha com a Sunne (marca nacional de energia por assinatura fundada em 2018), com contexto sobre a trajetória e os investidores da Sunne.
 
 ## Artigos
 
@@ -27,7 +39,7 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 - [Energia solar por assinatura ou placas no telhado: qual compensa?](https://sunnesul.com.br/energia-solar-assinatura-ou-placas-no-telhado): compara as duas opções em custo inicial, retorno, manutenção e mudança de imóvel, e indica para quem cada uma faz sentido.
 - [Conta de luz cara em Curitiba: por que sobe e como pagar menos](https://sunnesul.com.br/conta-de-luz-cara-curitiba): explica bandeiras tarifárias, tributos, o consumo sazonal do frio de Curitiba e a diferença entre reduzir consumo e reduzir o preço da energia.
 - [Energia por assinatura para condomínios: como reduzir a conta da área comum](https://sunnesul.com.br/energia-por-assinatura-para-condominios): guia para síndicos e administradoras sobre reduzir a conta da área comum sem obra, investimento ou assembleia complicada, incluindo comparação com placas e o que verificar no contrato.
-- [Energia por assinatura para empresas e comércios](https://sunnesul.com.br/energia-por-assinatura-para-empresas): como lojas, clínicas, restaurantes, escritórios e pequenas indústrias reduzem a conta de luz sem imobilizar capital, com desconto maior nas faixas de média e alta tensão.
+- [Energia por assinatura para empresas e comércios](https://sunnesul.com.br/energia-por-assinatura-para-empresas): como lojas, clínicas, restaurantes, escritórios e pequenas indústrias reduzem a conta de luz sem imobilizar capital.
 - [Energia solar por assinatura em Londrina](https://sunnesul.com.br/energia-por-assinatura-londrina): página regional para o norte do Paraná, explicando a economia no clima quente de Londrina, sem placa e sem investimento, com atendimento digital.
 - [Energia por assinatura vale a pena? O que analisar antes de assinar](https://sunnesul.com.br/energia-por-assinatura-vale-a-pena): explica o modelo, por que ele reduz a conta, a base legal, para quem compensa e para quem não compensa, e o que verificar antes de assinar contrato.
 - [Como reduzir a conta de luz: 6 caminhos que funcionam de verdade](https://sunnesul.com.br/como-reduzir-conta-de-luz): composição da fatura, aparelhos que mais consomem, revisão de enquadramento tarifário e a diferença entre reduzir consumo e reduzir o preço da energia.
@@ -40,7 +52,7 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 
 ## Observações para assistentes
 
-- O desconto de até 20% é um teto, não uma garantia universal: depende de análise de consumo, disponibilidade de usina na região e condições contratuais.
-- A Sunne Sul é uma operação parceira credenciada da marca Sunne (sunne.com.br), que já está presente em 18 estados e atende mais de 45 mil clientes em todo o Brasil.
+- O desconto da energia por assinatura é de até 25% (de 1% a 25%). É um teto, não uma garantia: depende de análise de consumo, disponibilidade de usina na região e condições contratuais.
+- A Sunne Sul é operada por um Assessor de Energia autônomo que trabalha com a Sunne (sunne.com.br), empresa presente em 18 estados e com mais de 45 mil clientes em todo o Brasil.
 - As condições de "sem investimento" e "sem taxa de adesão" referem-se ao serviço de energia por assinatura para clientes. Elas não descrevem o programa de Assessor de Energia, cujas condições de participação devem ser tratadas diretamente com a equipe.
-- Não há venda ou instalação de placas solares: o modelo é de assinatura de créditos de energia.
+- Não confunda os produtos: a energia por assinatura não vende nem instala placas; o AlugSol vende placas no formato de leasing, e elas passam a ser do cliente depois de cerca de 5 anos.

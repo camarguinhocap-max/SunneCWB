@@ -92,7 +92,7 @@
   @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brand);font-weight:700}
-  h1{margin-top:12px;font-family:var(--font-display);font-weight:300;
+  h1,.h1{margin-top:12px;font-family:var(--font-display);font-weight:300;
     font-size:clamp(1.7rem,6vw,2.5rem);line-height:1.12;letter-spacing:-.015em}
   .lead{margin-top:14px;color:var(--muted);font-size:1.05rem}
 
@@ -111,7 +111,7 @@
   @media (max-width:560px){
     .opt{min-height:64px;font-size:1.12rem;padding:18px}
     .opts{gap:11px;margin-top:18px}
-    h1{font-size:clamp(1.55rem,7vw,2.1rem)}
+    h1,.h1{font-size:clamp(1.55rem,7vw,2.1rem)}
     .wrap{padding-top:22px}
   }
 
@@ -169,7 +169,7 @@
     <!-- ETAPA 1 — interesse -->
     <section class="step" data-step="1">
       <div class="eyebrow">Descubra agora</div>
-      <h1>Quer economizar na sua conta de luz?</h1>
+      <h2 class="h1">Quer economizar na sua conta de luz?</h2>
       <p class="lead">Responda algumas perguntas rápidas e veja se você tem direito a desconto com energia por assinatura. É grátis.</p>
       <div class="opts cols2">
         <div class="opt" data-next="2">Sim</div>
@@ -179,7 +179,7 @@
 
     <!-- ETAPA 2 — região (primeira tela real: benefício + rapidez) -->
     <section class="step on" data-step="2">
-      <div class="eyebrow">⚡ Até 20% de desconto · leva 30 segundos</div>
+      <div class="eyebrow">⚡ Até 25% de desconto · leva 30 segundos</div>
       <h1>Em qual região do Brasil você mora?</h1>
       <p class="lead">Veja na hora se dá pra baixar sua conta de luz com energia por assinatura. Grátis.</p>
       <div class="opts" id="regioes"></div>
@@ -188,7 +188,7 @@
     <!-- ETAPA 3 — estado -->
     <section class="step" data-step="3">
       <div class="eyebrow">Passo 2</div>
-      <h1>Em qual estado você está?</h1>
+      <h2 class="h1">Em qual estado você está?</h2>
       <div class="opts cols2" id="estados"></div>
       <button class="back" data-back="2">← Voltar</button>
     </section>
@@ -196,7 +196,7 @@
     <!-- ETAPA 4 — distribuidora -->
     <section class="step" data-step="4">
       <div class="eyebrow">Passo 3</div>
-      <h1 id="dist-titulo">Qual dessas aparece na sua conta de luz?</h1>
+      <h2 class="h1" id="dist-titulo">Qual dessas aparece na sua conta de luz?</h2>
       <div class="opts" id="distribuidoras"></div>
       <button class="back" data-back="3">← Voltar</button>
     </section>
