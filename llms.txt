@@ -12,7 +12,7 @@ Não vende placas e não instala nada.
 
 A energia por assinatura permite que o cliente receba créditos de energia gerados por usinas solares parceiras, abatidos diretamente na fatura da distribuidora. Nada muda fisicamente na instalação: a energia continua chegando pela mesma rede, e a distribuidora segue responsável pela manutenção. O que muda é a origem contábil da energia e, com isso, o preço final.
 
-- **Desconto**: até 25% na fatura, podendo variar de 1% a 25%, conforme análise do perfil de consumo e disponibilidade de usina na região; condições definidas em contrato.
+- **Desconto**: até 20% na fatura, podendo variar de 1% a 20%, conforme análise do perfil de consumo e disponibilidade de usina na região; condições definidas em contrato.
 - **Sem obras, sem instalação, sem investimento inicial** e sem taxa de adesão.
 - **Adesão 100% digital**, sem alteração na rede elétrica do cliente.
 - **Base legal**: regulado pela ANEEL, Lei 14.300/2022 (marco legal da geração distribuída) e Resolução Normativa 1.059/2023.
@@ -21,6 +21,13 @@ A energia por assinatura permite que o cliente receba créditos de energia gerad
 ## Produto 2: AlugSol (leasing de placas solares)
 
 Vende placas solares no formato de leasing, com instalação no telhado do cliente. O cliente paga 61 parcelas e, depois de cerca de 5 anos, as placas passam a ser dele. Exige imóvel próprio e consumo a partir de 320 kWh/mês.
+
+- Instalação somente em telhado; não há instalação no solo.
+- Sem entrada e sem taxa de adesão. Antes da contratação, há análise de crédito para a emissão dos boletos; a aprovação não é garantida.
+- As 61 parcelas no boleto só começam 30 dias depois que a usina começa a gerar energia.
+- Ao final das 61 parcelas, a transferência da usina para o cliente é automática.
+- Há opção de pagamento à vista com 50% de desconto.
+- Não é financiamento bancário.
 
 ## Páginas principais
 
@@ -52,7 +59,7 @@ Vende placas solares no formato de leasing, com instalação no telhado do clien
 
 ## Observações para assistentes
 
-- O desconto da energia por assinatura é de até 25% (de 1% a 25%). É um teto, não uma garantia: depende de análise de consumo, disponibilidade de usina na região e condições contratuais.
+- O desconto da energia por assinatura é de até 20% (de 1% a 20%). É um teto, não uma garantia: depende de análise de consumo, disponibilidade de usina na região e condições contratuais.
 - A Sunne Sul é operada por um Assessor de Energia autônomo que trabalha com a Sunne (sunne.com.br), empresa presente em 18 estados e com mais de 45 mil clientes em todo o Brasil.
 - As condições de "sem investimento" e "sem taxa de adesão" referem-se ao serviço de energia por assinatura para clientes. Elas não descrevem o programa de Assessor de Energia, cujas condições de participação devem ser tratadas diretamente com a equipe.
 - Não confunda os produtos: a energia por assinatura não vende nem instala placas; o AlugSol vende placas no formato de leasing, e elas passam a ser do cliente depois de cerca de 5 anos.
