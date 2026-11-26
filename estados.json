@@ -1,0 +1,23 @@
+{
+  "_leia-me": "Lista oficial de estados atendidos pela energia por assinatura da Sunne. Edite esta lista e rode: python atualizar-estados.py",
+  "estados": [
+    {"sigla": "AL", "nome": "Alagoas"},
+    {"sigla": "BA", "nome": "Bahia"},
+    {"sigla": "CE", "nome": "Ceará"},
+    {"sigla": "ES", "nome": "Espírito Santo"},
+    {"sigla": "GO", "nome": "Goiás"},
+    {"sigla": "MA", "nome": "Maranhão"},
+    {"sigla": "MG", "nome": "Minas Gerais"},
+    {"sigla": "MT", "nome": "Mato Grosso"},
+    {"sigla": "PA", "nome": "Pará"},
+    {"sigla": "PB", "nome": "Paraíba"},
+    {"sigla": "PE", "nome": "Pernambuco"},
+    {"sigla": "PI", "nome": "Piauí"},
+    {"sigla": "PR", "nome": "Paraná"},
+    {"sigla": "RJ", "nome": "Rio de Janeiro"},
+    {"sigla": "RN", "nome": "Rio Grande do Norte"},
+    {"sigla": "RS", "nome": "Rio Grande do Sul"},
+    {"sigla": "SC", "nome": "Santa Catarina"},
+    {"sigla": "SP", "nome": "São Paulo"}
+  ]
+}

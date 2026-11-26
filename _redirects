@@ -16,4 +16,6 @@
 
 # Erros caem na página 404 personalizada
 /simular   /simulacao   301
+/estados.json         /404.html               404!
+/atualizar-estados.py  /404.html               404!
 /*             /404.html                      404
